@@ -1,4 +1,4 @@
-# Grupo Mate - Competencias Matemáticas
+# Grupo Exolimpico para Olimpico - Competencias Matemáticas
 
 Este repositorio contiene el sitio web oficial Dexolimpicos, Para Olimpicos, dedicado a la difusión, organización y participación en competencias matemáticas nacionales e internacionales. Aquí encontrarás información sobre próximas competencias, equipos, resultados, recursos y más, orientado principalmente a estudiantes, docentes y entusiastas de la matemática en Uruguay y la región.
 
