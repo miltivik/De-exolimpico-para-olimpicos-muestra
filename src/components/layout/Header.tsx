@@ -62,18 +62,18 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo and Title */}
           <Link href="/" className="flex items-center">
-            <div className={`relative h-16 w-16 mr-2 transition-all duration-700 ease-out ${logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+            <div className={`relative h-14 w-14 sm:h-16 sm:w-16 mr-3 transition-all duration-700 ease-out ${logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
               {/* Use an embedded image that matches the logo you provided */}
               <Image src="/images/CPM.png" alt="Logo" fill />
             </div>
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-5">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="font-inter text-base font-medium hover:text-sky-600">
               Inicio
             </Link>
@@ -87,7 +87,7 @@ export default function Header() {
             <Link href="/contacto" className="font-inter text-base font-medium hover:text-sky-600">
               Contacto
             </Link>
-            <a href="https://com-partidauruguay.weebly.com/" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-white font-medium px-5 py-2 rounded-full hover:bg-yellow-600 transition-colors">
+            <a href="https://com-partidauruguay.weebly.com/" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-white font-medium px-5 py-2.5 rounded-full hover:bg-yellow-600 transition-colors">
               Sitio Oficial
             </a>
           </nav>
