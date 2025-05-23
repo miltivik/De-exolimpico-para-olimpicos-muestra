@@ -49,8 +49,6 @@ export default function Header() {
   ];
 
   const materialesItems = [
-    { title: "Seminarios de Exolímpicos", href: "/seminarios-exolimpicos" },
-    { title: "Pruebas Anteriores", href: "/pruebas-anteriores" },
     { title: "Material de Estudio", href: "https://drive.google.com/drive/u/1/folders/18PJVLK11IXBHp_1ddrH8T5itxmDZpSOj" },
     { title: "Nacional", href: "/nacional" },
   ];

@@ -15,13 +15,12 @@ export default function Page2020() {
         {/* Hero Section */}
         <section className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-500 drop-shadow-md">2020</h1>
+            <div className="max-w-3xl mx-auto text-center">   
               <div className="flex justify-center mt-4">
                 <Image 
                   src="https://ext.same-assets.com/1728315765/3350069791.png" 
                   alt="2020" 
-                  width={120} 
+                  width={240} 
                   height={80} 
                   className="object-contain rounded-lg shadow-md" 
                 />

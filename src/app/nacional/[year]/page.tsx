@@ -35,9 +35,8 @@ export default async function YearPage({ params }) {
         <section className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl font-bold mb-2">{year === 'anteriores' ? 'Años anteriores' : year}</h1>
               <div className="flex justify-center mt-4">
-                <Image src={asset.img} alt={year} width={120} height={80} className="object-contain rounded-lg shadow-md" />
+                <Image src={asset.img} alt={year} width={240} height={80} className="object-contain rounded-lg shadow-md" />
               </div>
             </div>
           </div>

@@ -16,9 +16,8 @@ export default function AnterioresPage() {
         <section className="bg-sky-700 py-12 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl font-bold mb-2">Años anteriores</h1>
               <div className="flex justify-center mt-4">
-                <Image src={YEARS_ANTERIORES_IMG} alt="Años anteriores" width={120} height={80} className="object-contain rounded-lg shadow-md" />
+                <Image src={YEARS_ANTERIORES_IMG} alt="Años anteriores" width={240} height={80} className="object-contain rounded-lg shadow-md" />
               </div>
             </div>
           </div>

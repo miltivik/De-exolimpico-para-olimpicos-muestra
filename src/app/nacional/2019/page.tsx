@@ -22,7 +22,7 @@ export default function Redirect2019() {
                 <Image 
                   src="https://ext.same-assets.com/1728315765/3097668772.png" 
                   alt="2019" 
-                  width={120} 
+                  width={240} 
                   height={80} 
                   className="object-contain rounded-lg shadow-md" 
                 />
