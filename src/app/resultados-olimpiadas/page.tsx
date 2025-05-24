@@ -12,41 +12,67 @@ export default function ResultadosPage() {
       year: 2024,
       competitions: [
         {
-          name: "35ª Olimpíada Matemática de Países del Conosur",
-          location: "Asunción, Paraguay",
-          date: "Mayo 2024",
+          name: "31ª Olimpíada Matemática Rioplatense",
+          location: "Victoria, Argentina",
+          date: "Diciembre de 2024",
           team: [
-            { name: "Carlos Rodríguez", award: "Medalla de Plata", image: "/images/placeholder-profile.png" },
-            { name: "Ana Fernández", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
-            { name: "Martín Pérez", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
-            { name: "Lucía Méndez", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
+            { name: "Luca Fischbein", award: "Medalla de Bronce", image: "/images/Personas/Luca_Fischbein_Foto.jpg" },
+            { name: "Agustina Malenky", award: "Mención Honorífica", image: "/images/Personas/Agustina_Malenky_Foto.jpg" },
+            { name: "Valentino Oliva", award: "Mención Honorífica", image: "/images/Personas/Valentino_Oliva_Foto.jpg" },
+            { name: "Facundo Correa", award: "Mención Honorífica", image: "/images/Personas/Facundo_Correa_Foto.jpg" },
+            { name: "Alfonso Ramos", award: "Mención Honorífica", image: "/images/Personas/Alfonso_Ramos_Foto.jpg" },
+            { name: "Diego Correa", award: "Mención Honorífica", image: "/images/Personas/Diego_Correa_Foto.jpg" },
+            { name: "Federico Méndez", award: "Mención Honorífica", image: "/images/Personas/Federico_Méndez_Foto.jpg" },
           ],
-          leaders: ["Prof. Roberto Rodriguez", "Dra. Sandra Martínez"]
+          leaders: ["Tobías Rodriguez", "Facundo Méndez"]
         },
         {
-          name: "65ª Olimpíada Internacional de Matemática (IMO)",
-          location: "Bath, Reino Unido",
-          date: "Julio 2024",
+          name: "Olimpiada Panamericana Femenina de Matemática (PAGMO) 2024",
+          location: "Durango, México",
+          date: "Noviembre 2024",
           team: [
-            { name: "Diego Correa", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
-            { name: "Federico Méndez", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
-            { name: "Rafael Trápani", award: null, image: "/images/placeholder-profile.png" },
-            { name: "Gabriel Torres", award: null, image: "/images/placeholder-profile.png" },
-            { name: "Juan Martín González", award: null, image: "/images/placeholder-profile.png" },
+                        { name: "Julia Murguía", award: "Medalla de Bronce" , image: "/images/Personas/Julia_Murguia_Foto.jpg" },
+            { name: "María Capone", award: null, image: "/images/Personas/Maria_Capone_Foto.jpg" },
+            { name: "Anette Kunnin", award: null , image: "/images/Personas/Anette_Kunnin_Foto.jpg" },
+            { name: "Emma Stilman", award: null , image: "/images/Personas/Emma_Stilman_Foto.jpg" }
           ],
-          leaders: ["Prof. Roberto Rodriguez", "Dra. Ana Fernández"]
+          leaders: ["Prof. Fernando López", "Prof. María González"]
         },
         {
           name: "39ª Olimpíada Iberoamericana de Matemática",
           location: "Ciudad de México, México",
           date: "Septiembre 2024",
           team: [
-            { name: "Carlos Rodríguez", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
-            { name: "Lucía Méndez", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
-            { name: "Alfonso Ramos", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
-            { name: "Andrés Silva", award: null, image: "/images/placeholder-profile.png" },
+            { name: "Francisco González", award: "Medalla de Plata", image: "/images/Personas/Francisco_Gonzalez_Foto.jpeg" },
+            { name: "Rafael Trapani", award: "Medalla de Bronce", image: "/images/Personas/Rafael_Trapani_Foto.jpg" },
+            { name: "Juan Martín González", award: "Medalla de Bronce", image: "/images/Personas/Juan_Martín_González_Foto.jpg" },
+            { name: "Federico Méndez", award: "Mención Honorífica", image: "/images/Personas/Federico_Méndez_Foto.jpg" },
           ],
-          leaders: ["Prof. Fernando López", "Prof. María González"]
+          leaders: ["Facundo Méndez", "Vladimir Silva"]
+        },
+        {
+          name: "65ª Olimpíada Internacional de Matemática (IMO)",
+          location: "Bath, Reino Unido",
+          date: "Julio 2024",
+          team: [
+            { name: "Tobías Rodriguez", award: "Mención Honorífica", image: "/images/Personas/Tobías_Rodriguez_Foto.jpg" },
+            { name: "Florencia Sapriza", award: "Mención Honorífica", image: "/images/Personas/Florencia_Sapriza_Foto.jpg" },
+            { name: "Gastón Correa", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
+            { name: "Agustín Miraballes", award: null, image: "/images/Personas/Agustín_Miraballes_Foto.jpg" },
+            { name: "Francisco González", award: null, image: "/images/Personas/Francisco_Gonzalez_Foto.jpeg" },
+            { name: "Rafael Trapani", award: null, image: "/images/Personas/Rafael_Trapani_Foto.jpg" },
+          ],
+          leaders: ["Prof. Guillermo Stok", "Prof. Nelson Chocca"]
+        },
+        {
+          name: "35ª Olimpíada Matemática de Países del Conosur",
+          location: "Fortaleza, Brasil",
+          date: "Mayo 2024",
+          team: [
+            { name: "Diego Correa", award: "MEdalla de Bronce", image: "/images/Personas/Diego_Correa_Foto.jpg" },
+            { name: "Facundo Correa", award: "Mención Honorífica", image: "/images/Personas/Facundo_Correa_Foto.jpg" },
+          ],
+          leaders: []
         }
       ]
     },
@@ -54,29 +80,71 @@ export default function ResultadosPage() {
       year: 2023,
       competitions: [
         {
-          name: "34ª Olimpíada Matemática de Países del Conosur",
-          location: "Santiago, Chile",
-          date: "Mayo 2023",
+          name: "IV Olimpiada Internacional de Matemática para Primaria (OLIMPRI)",
+          location: "Virtual - Lima, Perú",
+          date: "Diciembre 2023",
           team: [
-            { name: "Santiago Vázquez", award: "Medalla de Oro", image: "/images/placeholder-profile.png" },
-            { name: "Carolina Pérez", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
-            { name: "Andrés Silva", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
-            { name: "Daniela Castro", award: null, image: "/images/placeholder-profile.png" },
+            // Nivel 4° de Primaria
+          { name: "Juan Roade Bernaola", award: null, image: "/images/Personas/Juan_Roade_Bernaola_Foto.jpg" },
+          { name: "Valentín González Roland", award: null, image: "/images/Personas/Valentín_González_Roland_Foto.jpg" },
+          { name: "Santiago Kriz Yimalkovski", award: null, image: "/images/Personas/Santiago_Kriz_Yimalkovski_Foto.jpg" },
+          // Nivel 5° de Primaria
+          { name: "José Ignacio Platero", award: null, image: "/images/Personas/José_Ignacio_Platero_Foto.jpg" },
+          { name: "Manuel Harteneck Pereira das Neves", award: null, image: "/images/Personas/Manuel_Harteneck_Pereira_das_Neves_Foto.jpg" },
+          { name: "Federico Stemphelet Vence", award: null, image: "/images/Personas/Federico_Stemphelet_Vence_Foto.jpg" },
+          // Nivel 6° de Primaria
+          { name: "Santiago Tanco Vanrell", award: null, image: "/images/Personas/Santiago_Tanco_Vanrell_Foto.jpg" },
+          { name: "Mateo Bidegain Martínez", award: null, image: "/images/Personas/Mateo_Bidegain_Martínez_Foto.jpg" },
+
           ],
-          leaders: ["Prof. Roberto Rodriguez", "Prof. Fernando López"]
+          leaders: []
         },
         {
-          name: "64ª Olimpíada Internacional de Matemática (IMO)",
-          location: "Tokio, Japón",
-          date: "Julio 2023",
+          name: "38ª Olimpíada Iberoamericana de Matemática",
+          location: "Río de Janeiro, Brasil",
+          date: "Setiembre, 2023",
           team: [
-            { name: "Santiago Vázquez", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
-            { name: "Federico Méndez", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
-            { name: "Carolina Pérez", award: null, image: "/images/placeholder-profile.png" },
-            { name: "Alfonso Ramos", award: null, image: "/images/placeholder-profile.png" },
-            { name: "Alejandro Torres", award: null, image: "/images/placeholder-profile.png" },
+            { name: "Florencia Sapriza", award: "Medalla de Bronce", image: "/images/Personas/Florencia_Sapriza_Foto.jpg" },
+            { name: "Renato De Paula", award: null, image: "/images/Personas/Renato_De_Paula_Foto.jpg" },
+            { name: "Mateo Domenech", award: null, image: "/images/Personas/Mateo_Domenech_Foto.jpg" },
+            { name: "Agustín Miraballes", award: null, image: "/images/Personas/Agustín_Miraballes_Foto.jpg" }
           ],
-          leaders: ["Prof. Roberto Rodriguez", "Dra. Ana Fernández"]
+          leaders: []
+        },
+        {
+          name: "34ª Olimpíada de Matemática de Países del Conosur",
+          location: "Buenos Aires, Argentina",
+          date: "Agosto, 2023",
+          team: [
+            { name: "Renato De Paula", award: "", image: "/images/Personas/Renato_De_Paula_Foto.jpg" },
+            { name: "Juan González", award: "", image: "/images/Personas/Juan_González_Foto.jpg" },
+            { name: "Francisco Rodríguez", award: "", image: "/images/Personas/Francisco_Rodríguez_Foto.jpg" },
+            { name: "Rafael Trápani", award: "", image: "/images/Personas/Rafael_Trápani_Foto.jpg" }
+          ],
+          leaders: []
+        },
+        {
+          name: "3ª Olimpíada de Matemática PAGMO",
+          location: "Costa Rica",
+          date: "6-12 de agosto de 2023",
+          team: [
+            { name: "Florencia Broggi", award: "", image: "/images/Personas/Florencia_Broggi_Foto.jpg" },
+            { name: "María Capone", award: "", image: "/images/Personas/María_Capone_Foto.jpg" },
+            { name: "Alina Dávila", award: "", image: "/images/Personas/Alina_Dávila_Foto.jpg" },
+            { name: "Anette Kunin", award: "", image: "/images/Personas/Anette_Kunin_Foto.jpg" }
+          ],
+          leaders: []
+        },
+        {
+          name: "64ª Olimpiada Internacional de Matemática (IMO)",
+          location: "Chiba, Japón",
+          date: "Julio, 2023",
+          team: [
+            { name: "Mauro Akerman", award: "Mención Honorífica", image: "/images/Personas/Mauro_Akerman_Foto.jpg" },
+            { name: "Facundo Méndez", award: "Mención Honorífica", image: "/images/Personas/Facundo_Méndez_Foto.jpg" },
+            { name: "Tobías Rodríguez", award: "Mención Honorífica", image: "/images/Personas/Tobías_Rodriguez_Foto.jpg" }
+          ],
+          leaders: []
         }
       ]
     }

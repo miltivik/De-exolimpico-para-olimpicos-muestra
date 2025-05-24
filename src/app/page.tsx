@@ -23,7 +23,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0 opacity-70">
             {/* Replace with a real image of students solving math problems */}
             <Image
-              src="/images/hero-background.jpg"
+              src="/images/Equipo_Ibero_2024_000.png"
               alt="Jóvenes participando en olimpiadas"
               fill
               className="object-cover"

@@ -83,7 +83,7 @@ export default function AboutPage() {
                 <h2 className="text-2xl font-bold font-inter mb-2 text-sky-700">Gauchito</h2>
                 <p className="text-gray-600 mb-2 font-medium">Mascota oficial desde 2015</p>
                 <p className="text-gray-700 text-base">
-                  Eulerito ha acompañado a la Com-Partida desde 2015, inspirando a estudiantes con su simpatía y amor por las matemáticas. Siempre presente en eventos y competencias, se ha convertido en un símbolo de alegría, compañerismo y pasión por el aprendizaje.
+                  Gauchito ha acompañado a la Com-Partida desde 2015, inspirando a estudiantes con su simpatía y amor por las matemáticas. Siempre presente en eventos y competencias, se ha convertido en un símbolo de alegría, compañerismo y pasión por el aprendizaje.
                 </p>
               </div>
             </div>

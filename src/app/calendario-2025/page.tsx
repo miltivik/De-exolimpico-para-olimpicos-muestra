@@ -33,7 +33,8 @@ export default function CalendarPage() {
     { date: "Noviembre (fecha a confirmar)", event: "Cuarta Instancia Olimpíada Nacional Primaria (Final)", status: "upcoming" },
     { date: "Diciembre (fecha a confirmar)", event: "32a Olimpíada Rioplatense de Matemática (Buenos Aires, Argentina)", status: "upcoming" },
     { date: "Diciembre (fecha a confirmar)", event: "5a Olimpíada OLIMPRI", status: "upcoming" },
-  ];
+  ].reverse();
+  
 
   // Get status badge for the event
   const getStatusBadge = (status: string) => {
