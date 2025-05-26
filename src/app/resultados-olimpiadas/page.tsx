@@ -36,7 +36,7 @@ export default function ResultadosPage() {
             { name: "Anette Kunnin", award: null , image: "/images/Personas/Anette_Kunnin_Foto.jpg" },
             { name: "Emma Stilman", award: null , image: "/images/Personas/Emma_Stilman_Foto.jpg" }
           ],
-          leaders: ["Prof. Fernando López", "Prof. María González"]
+          leaders: ["Florencia Sapriza", "Prof. Natalia Colino"]
         },
         {
           name: "39ª Olimpíada Iberoamericana de Matemática",
@@ -68,11 +68,13 @@ export default function ResultadosPage() {
           name: "35ª Olimpíada Matemática de Países del Conosur",
           location: "Fortaleza, Brasil",
           date: "Mayo 2024",
-          team: [
-            { name: "Diego Correa", award: "MEdalla de Bronce", image: "/images/Personas/Diego_Correa_Foto.jpg" },
-            { name: "Facundo Correa", award: "Mención Honorífica", image: "/images/Personas/Facundo_Correa_Foto.jpg" },
+            team: [
+             { name: "Diego Correa", award: "Medalla de Bronce", image: "/images/Personas/Diego_Correa_Foto.jpg" },
+             { name: "Facundo Correa", award: "Mención Honorífica", image: "/images/Personas/Facundo_Correa_Foto.jpg" },
+             { name: "Matías Cossatti", award: null, image: "/images/Personas/Matías_Cossatti_Foto.jpg" },
+             { name: "Matías Martony", award: null, image: "/images/Personas/Matías_Martony_Foto.jpg" },
           ],
-          leaders: []
+          leaders: ["Prof. Nelson Chocca", "Facundo Méndez"]
         }
       ]
     },
@@ -109,7 +111,7 @@ export default function ResultadosPage() {
             { name: "Mateo Domenech", award: null, image: "/images/Personas/Mateo_Domenech_Foto.jpg" },
             { name: "Agustín Miraballes", award: null, image: "/images/Personas/Agustín_Miraballes_Foto.jpg" }
           ],
-          leaders: []
+          leaders: ["Prof. Nelson Chocca", "Prof. Federico Fornesi"]
         },
         {
           name: "34ª Olimpíada de Matemática de Países del Conosur",
@@ -119,9 +121,9 @@ export default function ResultadosPage() {
             { name: "Renato De Paula", award: "", image: "/images/Personas/Renato_De_Paula_Foto.jpg" },
             { name: "Juan González", award: "", image: "/images/Personas/Juan_González_Foto.jpg" },
             { name: "Francisco Rodríguez", award: "", image: "/images/Personas/Francisco_Rodríguez_Foto.jpg" },
-            { name: "Rafael Trápani", award: "", image: "/images/Personas/Rafael_Trápani_Foto.jpg" }
+            { name: "Rafael Trápani", award: "", image: "/images/Personas/Rafael_Trapani_Foto.jpg" }
           ],
-          leaders: []
+          leaders: ["Prof. Nelson Chocca", "Vladimir Silva"]
         },
         {
           name: "3ª Olimpíada de Matemática PAGMO",
@@ -144,7 +146,7 @@ export default function ResultadosPage() {
             { name: "Facundo Méndez", award: "Mención Honorífica", image: "/images/Personas/Facundo_Méndez_Foto.jpg" },
             { name: "Tobías Rodríguez", award: "Mención Honorífica", image: "/images/Personas/Tobías_Rodriguez_Foto.jpg" }
           ],
-          leaders: []
+          leaders: ["Hernán Puschiasis"]
         }
       ]
     }
