@@ -89,7 +89,7 @@ export default function Header() {
             <Link href="/contacto" className="font-inter text-base font-medium hover:text-sky-600">
               Contacto
             </Link>
-            <Link href="/online" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-white font-medium px-5 py-2.5 rounded-full hover:bg-yellow-600 transition-colors">
+            <Link href="https://com-partidauruguay.weebly.com/" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-white font-medium px-5 py-2.5 rounded-full hover:bg-yellow-600 transition-colors">
               Sitio Oficial
             </Link>
           </nav>

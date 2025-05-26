@@ -33,7 +33,7 @@ export default function AboutPage() {
               </h2>
               <div className="relative w-full h-64 mb-8 rounded-lg overflow-hidden">
                 <Image 
-                  src="/images/historia.jpg" 
+                  src="/images/Historia.jpg" 
                   alt="Historia de Com-Partida de Matemática" 
                   fill 
                   className="object-cover"
