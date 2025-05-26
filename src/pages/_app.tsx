@@ -1,4 +1,5 @@
-import { Montserrat } from '@next/font/google';
+import { Montserrat } from 'next/font/google';
+import type { AppProps } from 'next/app';
 
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', weight: ["400","500","600","700"] });
 
