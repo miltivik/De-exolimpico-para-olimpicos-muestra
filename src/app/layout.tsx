@@ -5,8 +5,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Grupo Mate – ¡Entrenar y competir te hace mejor!",
-  description: "Grupo MATE es un grupo conformado por entrenadores de olimpiadas matemáticas, cuyo objetivo principal es entrenar a estudiantes que deseen mejorar en olimpiadas matemáticas.",
+  title: "De Exolimpicos para Olimpicos",
+  description: "De Exolimpicos para Olimpicos es un grupo conformado por entrenadores de olimpiadas matemáticas, cuyo objetivo principal es entrenar a estudiantes que deseen mejorar en olimpiadas matemáticas.",
 };
 
 export default function RootLayout({
