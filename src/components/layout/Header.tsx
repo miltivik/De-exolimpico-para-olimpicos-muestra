@@ -51,6 +51,7 @@ export default function Header() {
   const materialesItems = [
     { title: "Material de Estudio", href: "https://drive.google.com/drive/u/1/folders/18PJVLK11IXBHp_1ddrH8T5itxmDZpSOj" },
     { title: "Nacional", href: "/nacional" },
+    { title: "Paginas recomendadas", href: "/paginas-recomendadas" },
   ];
 
   const [logoVisible, setLogoVisible] = useState(false);
@@ -79,15 +80,18 @@ export default function Header() {
               { title: "Sobre Nosotros", href: "/sobre-nosotros" },
               { title: "Mascota", href: "/mascota" }
             ]} />
+            <Link href="/online" className="font-inter text-base font-medium hover:text-sky-600">
+              Participar Online
+            </Link>
             <NavDropdown label="Calendario 2025" items={calendarioItems} />
             <NavDropdown label="Equipos" items={equiposItems} />
             <NavDropdown label="Materiales" items={materialesItems} />
             <Link href="/contacto" className="font-inter text-base font-medium hover:text-sky-600">
               Contacto
             </Link>
-            <a href="https://com-partidauruguay.weebly.com/" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-white font-medium px-5 py-2.5 rounded-full hover:bg-yellow-600 transition-colors">
+            <Link href="/online" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-white font-medium px-5 py-2.5 rounded-full hover:bg-yellow-600 transition-colors">
               Sitio Oficial
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile menu */}

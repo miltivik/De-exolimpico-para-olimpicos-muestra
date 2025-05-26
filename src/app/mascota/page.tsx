@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 
 interface MascotaCardProps {
   imageSrc: string;
@@ -36,10 +36,79 @@ function MascotaCard({ imageSrc, name, subtitle, description }: MascotaCardProps
   );
 }
 
+// Modal para visualizar imágenes ampliadas
+interface ImageModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: ImageModalProps) {
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
+      <div className="relative max-w-4xl max-h-full">
+        <button
+          onClick={onClose}
+          className="absolute -top-10 right-0 text-white hover:text-sky-300 z-10"
+        >
+          <X size={32} />
+        </button>
+        <div className="relative max-h-[80vh] max-w-full">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={800}
+            height={600}
+            className="object-contain max-h-[80vh] w-auto"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function MascotaPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const galleryScrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [canGalleryScrollLeft, setCanGalleryScrollLeft] = useState(false);
+  const [canGalleryScrollRight, setCanGalleryScrollRight] = useState(true);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [modalImage, setModalImage] = useState<{src: string, alt: string} | null>(null);
+
+  const galleryImages = [
+    { src: "/images/Momento_Gauchito_Segundo_000.jpg", alt: "Momento con Gauchito II" },
+    { src: "/images/Momento_Gauchito_Segundo_001.jpg", alt: "Gauchito I en acción" },
+    { src: "/images/Momento_Gauchito_Segundo_002.jpg", alt: "Competencia matemática" },
+    { src: "/images/Momento_Gauchito_Segundo_003.jpg", alt: "Delegación IMO" },
+    { src: "/images/Momento_Gauchito_Segundo_004.jpg", alt: "Fuffy histórico" },
+    { src: "/images/Momento_Gauchito_Segundo_005.jpg", alt: "Momentos únicos" },
+    { src: "/images/Momento_Gauchito_Segundo_006.jpg", alt: "Momentos únicos" },
+  ];
 
   const checkScrollButtons = () => {
     if (scrollRef.current) {
@@ -49,57 +118,147 @@ export default function MascotaPage() {
     }
   };
 
-  const slideWidth = 600; // Ancho de cada slide + gap
+  const checkGalleryScrollButtons = () => {
+    if (galleryScrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = galleryScrollRef.current;
+      setCanGalleryScrollLeft(scrollLeft > 0);
+      setCanGalleryScrollRight(scrollLeft < scrollWidth - clientWidth);
+    }
+  };
 
-  const scrollLeft = () => {
+  const slideWidth = 600;
+  const gallerySlideWidth = 320;
+
+  const scrollLeftHandler = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: -slideWidth, behavior: 'smooth' });
       setTimeout(checkScrollButtons, 300);
     }
   };
 
-  const scrollRight = () => {
+  const scrollRightHandler = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: slideWidth, behavior: 'smooth' });
       setTimeout(checkScrollButtons, 300);
     }
   };
 
+  const galleryScrollLeftHandler = () => {
+    if (galleryScrollRef.current) {
+      galleryScrollRef.current.scrollBy({ left: -gallerySlideWidth, behavior: 'smooth' });
+      setTimeout(checkGalleryScrollButtons, 300);
+    }
+  };
+
+  const galleryScrollRightHandler = () => {
+    if (galleryScrollRef.current) {
+      galleryScrollRef.current.scrollBy({ left: gallerySlideWidth, behavior: 'smooth' });
+      setTimeout(checkGalleryScrollButtons, 300);
+    }
+  };
+
+  // Funciones para el drag de la galería
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!galleryScrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - galleryScrollRef.current.offsetLeft);
+    setScrollLeft(galleryScrollRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !galleryScrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - galleryScrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    galleryScrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    setTimeout(checkGalleryScrollButtons, 100);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  // Funciones para touch (móviles)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!galleryScrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - galleryScrollRef.current.offsetLeft);
+    setScrollLeft(galleryScrollRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !galleryScrollRef.current) return;
+    const x = e.touches[0].pageX - galleryScrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    galleryScrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    setTimeout(checkGalleryScrollButtons, 100);
+  };
+
+  const openModal = (src: string, alt: string) => {
+    setModalImage({ src, alt });
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+  };
+
+  useEffect(() => {
+    checkScrollButtons();
+    checkGalleryScrollButtons();
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
+        {/* Título principal */}
+        <section className="py-8 bg-gradient-to-br from-sky-50 to-blue-100">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-center text-sky-700 mb-4">
+              Nuestras Mascotas
+            </h1>
+            <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto">
+              Conoce a los compañeros que han acompañado a nuestras delegaciones a lo largo de los años
+            </p>
+          </div>
+        </section>
+
+        {/* Sección de mascotas principales */}
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
-            {/* Contenedor con flechas */}
             <div className="relative">
-              {/* Flecha izquierda */}
               <button
-                onClick={scrollLeft}
+                onClick={scrollLeftHandler}
                 disabled={!canScrollLeft}
                 className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 transition-all duration-200 flex items-center justify-center ${
                   canScrollLeft 
-                    ? 'hover:bg-sky-50 hover:shadow-xl text-sky-600 hover:text-sky-700' 
+                    ? 'hover:bg-sky-50 hover:shadow-xl text-sky-500 hover:text-sky-600' 
                     : 'text-gray-300 cursor-not-allowed'
                 }`}
               >
                 <ChevronLeft size={24} />
               </button>
 
-              {/* Flecha derecha */}
               <button
-                onClick={scrollRight}
+                onClick={scrollRightHandler}
                 disabled={!canScrollRight}
                 className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 transition-all duration-200 flex items-center justify-center ${
                   canScrollRight 
-                    ? 'hover:bg-sky-50 hover:shadow-xl text-sky-600 hover:text-sky-700' 
+                    ? 'hover:bg-sky-50 hover:shadow-xl text-sky-500 hover:text-sky-600' 
                     : 'text-gray-300 cursor-not-allowed'
                 }`}
               >
                 <ChevronRight size={24} />
               </button>
 
-              {/* Contenedor slider sin scrollbar */}
               <div 
                 ref={scrollRef}
                 className="flex gap-8 overflow-x-auto py-4 px-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
@@ -134,92 +293,86 @@ export default function MascotaPage() {
           </div>
         </section>
 
-        {/* Galería de fotos */}
+        {/* Galería de fotos mejorada */}
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-8 text-sky-700">Galería de Momentos</h2>
             
-            <div className="flex gap-4 overflow-x-auto pb-4">
-              {/* Foto 1 */}
-              <div className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/images/Momento_Gauchito_Segundo_000.jpg"
-                  alt="Momento con Gauchito II"
-                  width={320}
-                  height={240}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              
-              {/* Foto 2 */}
-              <div className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/images/Momento_Gauchito_Segundo_001.jpg"
-                  alt="Gauchito I en acción"
-                  width={320}
-                  height={240}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              
-              {/* Foto 3 */}
-              <div className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/images/Momento_Gauchito_Segundo_002.jpg"
-                  alt="Competencia matemática"
-                  width={320}
-                  height={240}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              
-              {/* Foto 4 */}
-              <div className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/images/Momento_Gauchito_Segundo_003.jpg"
-                  alt="Delegación IMO"
-                  width={320}
-                  height={240}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              
-              {/* Foto 5 */}
-              <div className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/images/Momento_Gauchito_Segundo_004.jpg"
-                  alt="Fuffy histórico"
-                  width={320}
-                  height={240}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              
-              {/* Foto 6 */}
-              <div className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/images/Momento_Gauchito_Segundo_005.jpg"
-                  alt="Momentos únicos"
-                  width={320}
-                  height={240}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              {/* Foto 7 */}
-              <div className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <Image
-                  src="/images/Momento_Gauchito_Segundo_006.jpg"
-                  alt="Momentos únicos"
-                  width={320}
-                  height={240}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                />
+            <div className="relative">
+              <button
+                onClick={galleryScrollLeftHandler}
+                disabled={!canGalleryScrollLeft}
+                className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 transition-all duration-200 flex items-center justify-center ${
+                  canGalleryScrollLeft 
+                    ? 'hover:bg-sky-50 hover:shadow-xl text-sky-500 hover:text-sky-600' 
+                    : 'text-gray-300 cursor-not-allowed'
+                }`}
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <button
+                onClick={galleryScrollRightHandler}
+                disabled={!canGalleryScrollRight}
+                className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 transition-all duration-200 flex items-center justify-center ${
+                  canGalleryScrollRight 
+                    ? 'hover:bg-sky-50 hover:shadow-xl text-sky-500 hover:text-sky-600' 
+                    : 'text-gray-300 cursor-not-allowed'
+                }`}
+              >
+                <ChevronRight size={20} />
+              </button>
+
+              <div 
+                ref={galleryScrollRef}
+                className={`flex gap-4 overflow-x-auto pb-4 px-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] ${
+                  isDragging ? 'cursor-grabbing' : 'cursor-grab'
+                }`}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseLeave}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onScroll={checkGalleryScrollButtons}
+              >
+                {galleryImages.map((image, index) => (
+                  <div key={index} className="flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group relative">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={320}
+                      height={240}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                      draggable={false}
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                      <button
+                        onClick={() => openModal(image.src, image.alt)}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-full p-3 shadow-lg hover:bg-sky-50"
+                      >
+                        <ZoomIn className="text-sky-600" size={24} />
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
+
+      {/* Modal para imágenes */}
+      {modalImage && (
+        <ImageModal
+          isOpen={!!modalImage}
+          onClose={closeModal}
+          imageSrc={modalImage.src}
+          imageAlt={modalImage.alt}
+        />
+      )}
     </div>
   );
 }

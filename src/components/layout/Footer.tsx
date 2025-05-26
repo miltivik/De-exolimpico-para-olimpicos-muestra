@@ -126,8 +126,8 @@ export default function Footer() {
               <h4 className="font-inter font-semibold text-gray-800 mb-4 text-md">Materiales</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/seminarios-exolimpicos" className="text-gray-600 hover:text-sky-700 transition-colors">
-                    Seminarios de Exolímpicos
+                  <Link href="/online" className="text-gray-600 hover:text-sky-700 transition-colors">
+                    Participación Online
                   </Link>
                 </li>
                 <li>

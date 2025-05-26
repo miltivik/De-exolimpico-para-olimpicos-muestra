@@ -1,39 +1,100 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
+// Componente contador en tiempo real
+function Countdown({ targetDate }: { targetDate: Date }) {
+  const [timeLeft, setTimeLeft] = useState<{days:number, hours:number, minutes:number, seconds:number}>({days:0, hours:0, minutes:0, seconds:0});
+
+  useEffect(() => {
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      setTimeLeft({ days, hours, minutes, seconds });
+    }
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, [targetDate]);
+
+  return (
+    <span className="text-yellow-700 font-medium text-sm">
+      Faltan {timeLeft.days} días, {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
+    </span>
+  );
+}
+
 export default function CalendarPage() {
-  // Events data with past events marked
+  // Events data with past events marked and target dates - sorted from closest to furthest from current date (May 25, 2025)
   const calendarEvents = [
-    { date: "Marzo 10", event: "Prueba XXXVI APMO", status: "finished" },
-    { date: "Marzo (fecha no especificada)", event: "Primera Prueba de Selección IMO", status: "finished" },
-    { date: "Marzo 24", event: "Segunda Prueba de Selección IMO", status: "finished" },
-    { date: "Marzo (fecha no especificada)", event: "Primera Prueba de Selección Iberoamericana", status: "finished" },
-    { date: "Marzo 30", event: "Torneo Internacional Canguro - Desafío Nacional Canguro", status: "finished" },
-    { date: "Abril 07", event: "Tercera Prueba de Selección IMO", status: "finished" },
-    { date: "Abril (fecha no especificada)", event: "Segunda Prueba de Selección Iberoamericana", status: "finished" },
-    { date: "Abril 25", event: "Primera Prueba de Selección Conosur", status: "finished" },
-    { date: "Abril (fecha no especificada)", event: "Primera Prueba de Selección PAGMO", status: "finished" },
-    { date: "Mayo 05", event: "Segunda Prueba de Selección Conosur", status: "finished" },
-    { date: "Mayo (fecha no especificada)", event: "Segunda Prueba de Selección PAGMO", status: "finished" },
-    { date: "Mayo (fecha no especificada)", event: "Tercera Prueba de Selección Iberoamericana", status: "finished" },
-    { date: "Mayo 10", event: "Pruebas 31a Olimpíada Iberoamericana Juvenil de Mayo", status: "finished" },
+    { 
+      date: "Junio 4 al 9", 
+      event: "36a Olimpíada Matemática de Países del Conosur (Minas, Uruguay)", 
+      status: "upcoming-next",
+      targetDate: new Date('2025-06-04T00:00:00')
+    },
+    { 
+      date: "Julio 10 al 20", 
+      event: "66th International Mathematical Olympiad (Sunshine Coast, Australia)", 
+      status: "upcoming",
+      targetDate: new Date('2025-07-10T00:00:00')
+    },
+    { 
+      date: "Julio 27", 
+      event: "Fecha límite Primera Instancia Olimpíada Nacional", 
+      status: "upcoming",
+      targetDate: new Date('2025-07-27T00:00:00')
+    },
+    { 
+      date: "Agosto 17", 
+      event: "Fecha límite Segunda Instancia Olimpíada Nacional", 
+      status: "upcoming",
+      targetDate: new Date('2025-08-17T00:00:00')
+    },
+    { date: "Agosto", event: "5a Olimpíada PAGMO (fecha y sede a confirmar)", status: "upcoming" },
+    { 
+      date: "Setiembre 7", 
+      event: "Fecha límite Tercera Instancia Olimpíada Nacional (Semifinal)", 
+      status: "upcoming",
+      targetDate: new Date('2025-09-07T00:00:00')
+    },
+    { 
+      date: "Setiembre 22 al 29", 
+      event: "40a Olimpíada Iberoamericana de Matemática (Temuco, Chile)", 
+      status: "upcoming",
+      targetDate: new Date('2025-09-22T00:00:00')
+    },
+    { date: "Octubre", event: "Cuarta Instancia Olimpíada Nacional Secundaria (Final) (fecha a confirmar)", status: "upcoming" },
+    { date: "Noviembre", event: "Cuarta Instancia Olimpíada Nacional Primaria (Final) (fecha a confirmar)", status: "upcoming" },
+    { date: "Diciembre", event: "32a Olimpíada Rioplatense de Matemática (Buenos Aires, Argentina) (fecha a confirmar)", status: "upcoming" },
+    { date: "Diciembre", event: "5a Olimpíada OLIMPRI (fecha a confirmar)", status: "upcoming" },
     { date: "Mayo 26", event: "Cuarta Prueba de Selección Iberoamericana", status: "finished" },
-    { date: "Junio 4 al 9", event: "36a Olimpíada Matemática de Países del Conosur (Minas, Uruguay)", status: "finished-recent" },
-    { date: "Julio 10 al 20", event: "66th International Mathematical Olympiad (Sunshine Coast, Australia)", status: "upcoming-next" },
-    { date: "Julio 27", event: "Fecha límite Primera Instancia Olimpíada Nacional", status: "upcoming" },
-    { date: "Agosto 17", event: "Fecha límite Segunda Instancia Olimpíada Nacional", status: "upcoming" },
-    { date: "Agosto (fecha y sede a confirmar)", event: "5a Olimpíada PAGMO", status: "upcoming" },
-    { date: "Setiembre 07", event: "Fecha límite Tercera Instancia Olimpíada Nacional (Semifinal)", status: "upcoming" },
-    { date: "Setiembre 22 al 29", event: "40a Olimpíada Iberoamericana de Matemática (Temuco, Chile)", status: "upcoming" },
-    { date: "Octubre (fecha a confirmar)", event: "Cuarta Instancia Olimpíada Nacional Secundaria (Final)", status: "upcoming" },
-    { date: "Noviembre (fecha a confirmar)", event: "Cuarta Instancia Olimpíada Nacional Primaria (Final)", status: "upcoming" },
-    { date: "Diciembre (fecha a confirmar)", event: "32a Olimpíada Rioplatense de Matemática (Buenos Aires, Argentina)", status: "upcoming" },
-    { date: "Diciembre (fecha a confirmar)", event: "5a Olimpíada OLIMPRI", status: "upcoming" },
-  ].reverse();
+    { date: "Mayo 10", event: "Pruebas 31a Olimpíada Iberoamericana Juvenil de Mayo", status: "finished" },
+    { date: "Mayo", event: "Tercera Prueba de Selección Iberoamericana", status: "finished" },
+    { date: "Mayo", event: "Segunda Prueba de Selección PAGMO", status: "finished" },
+    { date: "Mayo 05", event: "Segunda Prueba de Selección Conosur", status: "finished" },
+    { date: "Abril", event: "Primera Prueba de Selección PAGMO", status: "finished" },
+    { date: "Abril 25", event: "Primera Prueba de Selección Conosur", status: "finished" },
+    { date: "Abril", event: "Segunda Prueba de Selección Iberoamericana", status: "finished" },
+    { date: "Abril 07", event: "Tercera Prueba de Selección IMO", status: "finished" },
+    { date: "Marzo 30", event: "Torneo Internacional Canguro - Desafío Nacional Canguro", status: "finished" },
+    { date: "Marzo", event: "Primera Prueba de Selección Iberoamericana", status: "finished" },
+    { date: "Marzo 24", event: "Segunda Prueba de Selección IMO", status: "finished" },
+    { date: "Marzo", event: "Primera Prueba de Selección IMO", status: "finished" },
+    { date: "Marzo 10", event: "Prueba XXXVI APMO", status: "finished" }
+  ];
   
 
   // Get status badge for the event
@@ -95,7 +156,14 @@ export default function CalendarPage() {
                           }`}
                         >
                           <td className="py-4 px-4 font-semibold whitespace-nowrap">{event.date}</td>
-                          <td className="py-4 px-4">{event.event}</td>
+                          <td className="py-4 px-4">
+                            <div className="flex flex-col gap-1">
+                              <span>{event.event}</span>
+                              {'targetDate' in event && event.targetDate && (
+                                <Countdown targetDate={event.targetDate} />
+                              )}
+                            </div>
+                          </td>
                           <td className="py-4 px-4">{getStatusBadge(event.status)}</td>
                         </tr>
                       ))}
