@@ -64,22 +64,69 @@ function CountdownDays({ targetDate }: { targetDate: Date }) {
 }
 
 export default function ProximasCompetenciasPage() {
-  // Only upcoming events (starting from July 5, 2025)
+  // Only upcoming events (starting from May 25, 2025)
   const upcomingEvents = [
-    { date: "Julio 10 al 20", event: "66th International Mathematical Olympiad (Sunshine Coast, Australia)", highlight: true, daysLeft: 5 },
-    { date: "Julio 27", event: "Fecha límite Primera Instancia Olimpíada Nacional", daysLeft: 22 },
-    { date: "Agosto 17", event: "Fecha límite Segunda Instancia Olimpíada Nacional", daysLeft: 43 },
-    { date: "Agosto (fecha y sede a confirmar)", event: "5a Olimpíada PAGMO", daysLeft: null },
-    { date: "Setiembre 07", event: "Fecha límite Tercera Instancia Olimpíada Nacional (Semifinal)", daysLeft: 64 },
-    { date: "Setiembre 22 al 29", event: "40a Olimpíada Iberoamericana de Matemática (Temuco, Chile)", daysLeft: 79 },
-    { date: "Octubre (fecha a confirmar)", event: "Cuarta Instancia Olimpíada Nacional Secundaria (Final)", daysLeft: null },
-    { date: "Noviembre (fecha a confirmar)", event: "Cuarta Instancia Olimpíada Nacional Primaria (Final)", daysLeft: null },
-    { date: "Diciembre (fecha a confirmar)", event: "32a Olimpíada Rioplatense de Matemática (Buenos Aires, Argentina)", daysLeft: null },
-    { date: "Diciembre (fecha a confirmar)", event: "5a Olimpíada OLIMPRI", daysLeft: null },
+    { 
+      date: "Junio 4 al 9", 
+      event: "36a Olimpíada Matemática de Países del Conosur (Minas, Uruguay)", 
+      highlight: true, 
+      daysLeft: 10
+    },
+    { 
+      date: "Julio 10 al 20", 
+      event: "66th International Mathematical Olympiad (Sunshine Coast, Australia)", 
+      highlight: false, 
+      daysLeft: 46
+    },
+    { 
+      date: "Julio 27", 
+      event: "Fecha límite Primera Instancia Olimpíada Nacional", 
+      daysLeft: 63
+    },
+    { 
+      date: "Agosto 17", 
+      event: "Fecha límite Segunda Instancia Olimpíada Nacional", 
+      daysLeft: 84
+    },
+    { 
+      date: "Agosto", 
+      event: "5a Olimpíada PAGMO (fecha y sede a confirmar)", 
+      daysLeft: null 
+    },
+    { 
+      date: "Setiembre 7", 
+      event: "Fecha límite Tercera Instancia Olimpíada Nacional (Semifinal)", 
+      daysLeft: 105
+    },
+    { 
+      date: "Setiembre 22 al 29", 
+      event: "40a Olimpíada Iberoamericana de Matemática (Temuco, Chile)", 
+      daysLeft: 120
+    },
+    { 
+      date: "Octubre", 
+      event: "Cuarta Instancia Olimpíada Nacional Secundaria (Final) (fecha a confirmar)", 
+      daysLeft: null 
+    },
+    { 
+      date: "Noviembre", 
+      event: "Cuarta Instancia Olimpíada Nacional Primaria (Final) (fecha a confirmar)", 
+      daysLeft: null 
+    },
+    { 
+      date: "Diciembre", 
+      event: "32a Olimpíada Rioplatense de Matemática (Buenos Aires, Argentina) (fecha a confirmar)", 
+      daysLeft: null 
+    },
+    { 
+      date: "Diciembre", 
+      event: "5a Olimpíada OLIMPRI (fecha a confirmar)", 
+      daysLeft: null 
+    }
   ];
 
-  // Fecha de inicio de la IMO 2025
-  const imoStartDate = new Date('2025-07-10T00:00:00');
+  // Fecha de inicio del Conosur 2025
+  const conosurStartDate = new Date('2025-06-04T00:00:00');
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -96,7 +143,7 @@ export default function ProximasCompetenciasPage() {
                 <div className="h-1 w-24 bg-yellow-500 rounded mb-6"></div>
               </div>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Prepárate para las próximas competencias matemáticas a partir del 5 de julio de 2025
+                Prepárate para las próximas competencias matemáticas
               </p>
             </div>
 
@@ -105,7 +152,7 @@ export default function ProximasCompetenciasPage() {
               <div className="relative h-48 md:h-64">
                 <Image 
                   src="/images/hero-background.jpg" 
-                  alt="IMO Background" 
+                  alt="Conosur Background" 
                   fill 
                   style={{objectFit:'cover'}}
                   className="z-0"
@@ -115,13 +162,13 @@ export default function ProximasCompetenciasPage() {
                 <div className="absolute inset-0 flex items-center justify-center z-20">
                   <div className="text-center p-6 md:p-10">
                     <div className="inline-block px-3 py-1 bg-yellow-500 text-white text-xs font-semibold rounded-full mb-3">
-                      DESTACADO
+                      PRÓXIMO EVENTO
                     </div>
                     <h2 className="text-xl md:text-3xl font-bold text-white mb-2">
-                      International Mathematical Olympiad
+                      Olimpíada Matemática del Conosur
                     </h2>
                     <p className="text-white text-opacity-90 md:text-lg">
-                      La competencia matemática de mayor prestigio a nivel mundial
+                      La competencia que reúne a los mejores estudiantes de los países del Conosur
                     </p>
                   </div>
                 </div>
@@ -135,7 +182,7 @@ export default function ProximasCompetenciasPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <span className="text-gray-700 font-medium">Julio 10 al 20, 2025</span>
+                    <span className="text-gray-700 font-medium">Junio 4 al 9, 2025</span>
                   </div>
                   
                   <div className="flex items-center md:mr-8 mb-4 md:mb-0">
@@ -145,7 +192,7 @@ export default function ProximasCompetenciasPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
-                    <span className="text-gray-700 font-medium">Sunshine Coast, Australia</span>
+                    <span className="text-gray-700 font-medium">Minas, Uruguay</span>
                   </div>
                   
                   <div className="flex items-center">
@@ -154,32 +201,32 @@ export default function ProximasCompetenciasPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <Countdown targetDate={imoStartDate} />
+                    <Countdown targetDate={conosurStartDate} />
                   </div>
                 </div>
                 
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                   <div className="mb-4 md:mb-0">
                     <p className="text-gray-600 mb-3">
-                      La delegación uruguaya participará de esta prestigiosa competencia que reúne a los mejores estudiantes de matemática del mundo.
+                      Uruguay será sede de esta importante competencia que reúne a los mejores estudiantes de matemática de Argentina, Brasil, Chile, Paraguay, Perú y Uruguay.
                     </p>
                     <div className="flex items-center">
                       <div className="flex -space-x-2 mr-3">
                         <div className="w-8 h-8 rounded-full bg-sky-200 flex items-center justify-center text-sky-700 font-bold text-xs border-2 border-white">UY</div>
-                        <div className="w-8 h-8 rounded-full bg-sky-300 flex items-center justify-center text-sky-700 font-bold text-xs border-2 border-white">5</div>
+                        <div className="w-8 h-8 rounded-full bg-sky-300 flex items-center justify-center text-sky-700 font-bold text-xs border-2 border-white">4</div>
                       </div>
-                      <span className="text-gray-500 text-sm">5 participantes</span>
+                      <span className="text-gray-500 text-sm">4 participantes</span>
                     </div>
                   </div>
                   
                   <div className="flex">
                     <Link 
-                      href="/equipo-imo-2025" 
+                      href="/equipo-conosur-2025" 
                       className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg font-medium transition-colors shadow-sm flex items-center group relative overflow-hidden text-sm"
                     >
                       <span className="absolute inset-0 w-0 bg-yellow-500 transition-all duration-300 ease-out group-hover:w-full"></span>
                       <span className="relative flex items-center">
-                        Ver equipo uruguayo
+                        Ver detalles
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 ml-1 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -200,7 +247,9 @@ export default function ProximasCompetenciasPage() {
                 {upcomingEvents.map((event, index) => {
                   // Calcular la fecha objetivo si es posible
                   let targetDate: Date | null = null;
-                  if (event.event.includes('International Mathematical Olympiad')) {
+                  if (event.event.includes('Conosur')) {
+                    targetDate = new Date('2025-06-04T00:00:00');
+                  } else if (event.event.includes('International Mathematical Olympiad')) {
                     targetDate = new Date('2025-07-10T00:00:00');
                   } else if (event.event.includes('Primera Instancia')) {
                     targetDate = new Date('2025-07-27T00:00:00');
@@ -242,7 +291,7 @@ export default function ProximasCompetenciasPage() {
                         <p className={`text-gray-800 ${event.highlight ? 'font-semibold' : ''}`}>{event.event}</p>
                         {event.highlight && (
                           <Link 
-                            href="/equipo-imo-2025" 
+                            href="/equipo-conosur-2025" 
                             className="inline-flex items-center text-sky-600 hover:text-sky-800 font-medium text-sm mt-2 group"
                           >
                             <span className="border-b border-transparent group-hover:border-sky-800 transition-colors">
@@ -261,17 +310,7 @@ export default function ProximasCompetenciasPage() {
             </div>
 
             <div className="mt-10 text-center">
-              <Link 
-                href="/calendario-2025"
-                className="inline-flex items-center text-lg text-sky-600 hover:text-sky-800 font-medium transition-colors group"
-              >
-                <span className="border-b border-transparent group-hover:border-sky-800 transition-colors">
-                  Ver calendario completo 2025
-                </span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
+              <p className="text-gray-500 text-sm">Fecha de referencia: 25 de mayo de 2025</p>
             </div>
           </div>
         </div>

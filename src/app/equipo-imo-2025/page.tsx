@@ -11,6 +11,7 @@ export default function IMOTeamPage() {
     {
       id: "URU1",
       name: "Diego Correa",
+      image: "/images/Personas/Diego_Correa_Foto.jpg",
       school: "San Pablo",
       achievements: ["Medalla de Plata en Olimpíada Rioplatense 2024", "Medalla de Bronce en Olimpíada del Conosur 2024"],
       bio: "Diego ha participado en olimpiadas matemáticas desde 2022. Su enfoque principal es el álgebra y la combinatoria."
@@ -18,6 +19,7 @@ export default function IMOTeamPage() {
     {
       id: "URU2",
       name: "Juan Martín González",
+      image: "/images/Personas/Juan_Martín_González_Foto.jpg",
       school: "Liceo N° 1, Carmelo",
       achievements: ["Medalla de Oro en Olimpíada Nacional 2024", "Mención Honorífica en Olimpíada Iberoamericana 2024"],
       bio: "Juan Martín descubrió su pasión por las matemáticas a los 10 años. Es su primera participación en la IMO."
@@ -25,6 +27,7 @@ export default function IMOTeamPage() {
     {
       id: "URU3",
       name: "Federico Méndez",
+      image: "/images/Personas/Federico_Méndez_Foto.jpg",
       school: "José P. Varela",
       achievements: ["Medalla de Plata en Olimpíada Nacional 2024", "Medalla de Oro en OLIMPRI 2023"],
       bio: "Federico es uno de los más experimentados del equipo, habiendo participado en la IMO 2024 donde obtuvo Mención Honorífica."
@@ -32,6 +35,7 @@ export default function IMOTeamPage() {
     {
       id: "URU4",
       name: "Alfonso Ramos",
+      image: "/images/Personas/Alfonso_Ramos_Foto.jpg",
       school: "PRE/U",
       achievements: ["Medalla de Oro en Olimpíada Nacional 2024", "Medalla de Bronce en Olimpíada Iberoamericana 2024"],
       bio: "Alfonso se destaca por su capacidad para resolver problemas geométricos y su habilidad para enseñar a otros."
@@ -39,6 +43,7 @@ export default function IMOTeamPage() {
     {
       id: "URU5",
       name: "Rafael Trápani",
+      image: "/images/Personas/Rafael_Trapani_Foto.jpg",
       school: "Escuela Superior de Informática Buceo - UTU",
       achievements: ["Medalla de Plata en Olimpíada Nacional 2024", "Medalla de Plata en Olimpíada Rioplatense 2024"],
       bio: "Rafael combina su pasión por la programación con su talento matemático. Es su primera participación en la IMO."
@@ -123,15 +128,24 @@ export default function IMOTeamPage() {
             {/* Team Members */}
             <section className="mb-12">
               <h2 className="text-2xl font-semibold mb-6 text-center">Nuestros Representantes</h2>
-              
               <div className="space-y-6">
                 {teamMembers.map((member, index) => (
                   <Card key={index} className="shadow-md">
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row">
-                        <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
-                          <div className="w-24 h-24 bg-sky-100 rounded-full flex items-center justify-center">
-                            <span className="text-sky-700 font-bold">{member.id}</span>
+                        <div className="md:w-1/4 flex justify-center items-center mb-4 md:mb-0">
+                          <div className="w-32 h-32 rounded-full overflow-hidden">
+                            {member.image ? (
+                              <img 
+                                src={member.image} 
+                                alt={`Foto de ${member.name}`}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-sky-100 rounded-full flex items-center justify-center">
+                                <span className="text-sky-700 font-bold text-lg">{member.id}</span>
+                              </div>
+                            )}
                           </div>
                         </div>
                         <div className="md:w-3/4 md:pl-6">

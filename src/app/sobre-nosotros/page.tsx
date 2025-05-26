@@ -81,9 +81,9 @@ export default function AboutPage() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold font-inter mb-2 text-sky-700">Gauchito</h2>
-                <p className="text-gray-600 mb-2 font-medium">Mascota oficial desde 2015</p>
+                <p className="text-gray-600 mb-2 font-medium">Mascota oficial desde 2024</p>
                 <p className="text-gray-700 text-base">
-                  Eulerito ha acompañado a la Com-Partida desde 2015, inspirando a estudiantes con su simpatía y amor por las matemáticas. Siempre presente en eventos y competencias, se ha convertido en un símbolo de alegría, compañerismo y pasión por el aprendizaje.
+                  Gauchito ha acompañado a la Com-Partida desde 2024, inspirando a estudiantes con su simpatía y amor por las matemáticas. Siempre presente en eventos y competencias, se ha convertido en un símbolo de alegría, compañerismo y pasión por el aprendizaje.
                 </p>
               </div>
             </div>
@@ -191,15 +191,6 @@ export default function AboutPage() {
               <h2 className="text-2xl md:text-3xl font-inter font-semibold mb-8 text-center">
                 Colaboradores
               </h2>
-              <div className="relative w-full h-80 mb-8 rounded-lg overflow-hidden">
-                <Image 
-                  src="/images/colaboradores.jpg" 
-                  alt="Equipo de colaboradores" 
-                  fill 
-                  className="object-cover"
-                  priority
-                />
-              </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-white p-6 rounded-lg shadow-md text-center">
                   <div className="w-24 h-24 bg-sky-100 rounded-full mx-auto mb-4 overflow-hidden">
