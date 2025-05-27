@@ -131,8 +131,13 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pruebas-anteriores" className="text-gray-600 hover:text-sky-700 transition-colors">
-                    Pruebas Anteriores
+                  <Link href="/nacional" className="text-gray-600 hover:text-sky-700 transition-colors">
+                    Olimpiadas Nacionales
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/paginas-recomendadas" className="text-gray-600 hover:text-sky-700 transition-colors">
+                    Paginas Recomendadas
                   </Link>
                 </li>
                 <li>
