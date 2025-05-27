@@ -202,7 +202,7 @@ export default function AboutPage() {
                       className="object-cover w-full h-full"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-1">Juan Pérez</h3>
+                  <h3 className="text-lg font-semibold mb-1">Ismael Medina</h3>
                   <p className="text-gray-600 text-sm">Coordinador General</p>
                 </div>
                 

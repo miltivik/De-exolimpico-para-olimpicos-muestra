@@ -53,9 +53,14 @@ export default function PaginasRecomendadasPage() {
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-semibold text-sky-700 mb-2">
+                        <Link
+                          href="https://web.evanchen.cc/olympiad.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xl font-semibold text-sky-700 mb-2 hover:text-sky-800 transition-colors block"
+                        >
                           Evan Chen's Olympiad Resources
-                        </h3>
+                        </Link>
                         <p className="text-sm text-gray-500">web.evanchen.cc/olympiad.html</p>
                       </div>
                       <Link
@@ -87,9 +92,14 @@ export default function PaginasRecomendadasPage() {
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-semibold text-sky-700 mb-2">
+                        <Link
+                          href="https://omaforos.com.ar/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xl font-semibold text-sky-700 mb-2 hover:text-sky-800 transition-colors block"
+                        >
                           OMA Foros Argentina
-                        </h3>
+                        </Link>
                         <p className="text-sm text-gray-500">omaforos.com.ar</p>
                       </div>
                       <Link
@@ -121,9 +131,14 @@ export default function PaginasRecomendadasPage() {
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-semibold text-sky-700 mb-2">
+                        <Link
+                          href="https://artofproblemsolving.com/community"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xl font-semibold text-sky-700 mb-2 hover:text-sky-800 transition-colors block"
+                        >
                           Art of Problem Solving Community
-                        </h3>
+                        </Link>
                         <p className="text-sm text-gray-500">artofproblemsolving.com/community</p>
                       </div>
                       <Link
@@ -155,9 +170,14 @@ export default function PaginasRecomendadasPage() {
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-semibold text-sky-700 mb-2">
+                        <Link
+                          href="https://yufeizhao.com/olympiad/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xl font-semibold text-sky-700 mb-2 hover:text-sky-800 transition-colors block"
+                        >
                           Yufei Zhao's Olympiad Resources
-                        </h3>
+                        </Link>
                         <p className="text-sm text-gray-500">yufeizhao.com/olympiad/</p>
                       </div>
                       <Link

@@ -63,14 +63,30 @@ function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: ImageModalProps) {
     };
   }, [isOpen, onClose]);
 
+  // Handler para cerrar al hacer clic fuera de la imagen
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Solo cerrar si el clic fue en el backdrop (overlay), no en la imagen
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  // Handler para prevenir que el clic en la imagen cierre el modal
+  const handleImageClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
-      <div className="relative max-w-4xl max-h-full">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4 cursor-pointer"
+      onClick={handleBackdropClick}
+    >
+      <div className="relative max-w-4xl max-h-full cursor-default" onClick={handleImageClick}>
         <button
           onClick={onClose}
-          className="absolute -top-10 right-0 text-white hover:text-sky-300 z-10"
+          className="absolute -top-10 right-0 text-white hover:text-sky-300 z-10 transition-colors duration-200"
         >
           <X size={32} />
         </button>
@@ -80,7 +96,7 @@ function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: ImageModalProps) {
             alt={imageAlt}
             width={800}
             height={600}
-            className="object-contain max-h-[80vh] w-auto"
+            className="object-contain max-h-[80vh] w-auto rounded-lg shadow-2xl"
           />
         </div>
       </div>
@@ -269,7 +285,7 @@ export default function MascotaPage() {
                     imageSrc="/images/Eulerito.jpg"
                     name="Gauchito II"
                     subtitle="Mascota actual, desde la Ibero 2024"
-                    description="Este capibara, digno sucesor del original, ha acompañado con orgullo a las delegaciones de Ibero y Río 2024, viendo nacer a potenciales leyendas."
+                    description="Este carpincho, digno sucesor del original, ha acompañado con orgullo a las delegaciones de Ibero y Río 2024, viendo nacer a potenciales leyendas."
                   />
                 </div>
                 <div className="flex-shrink-0 w-[600px]">
