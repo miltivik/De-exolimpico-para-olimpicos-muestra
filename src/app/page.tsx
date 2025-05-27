@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import CompetitionsTable from '@/components/competitions/CompetitionsTable';
+import { nextSixCompetitions } from '@/data/competitions';
 import React, { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -138,140 +140,104 @@ export default function Home() {
               </p>
               <div className="grid gap-6 md:grid-cols-3">
                 {/* La Diaria */}
-                <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="h-32 bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center">
-                    <div className="text-white text-center">
-                      <div className="text-lg font-bold">La Diaria</div>
-                      <div className="text-sm opacity-90">Periódico</div>
+                <Link 
+                  href="https://ladiaria.com.uy/usuarios/entrar/?article=122406"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group h-full"
+                >
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-200 group-hover:scale-[1.02] cursor-pointer h-full flex flex-col">
+                    <div className="h-32 bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center flex-shrink-0">
+                      <div className="text-white text-center">
+                        <div className="text-lg font-bold">La Diaria</div>
+                        <div className="text-sm opacity-90">Periódico</div>
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="font-semibold text-lg mb-3 text-sky-700 group-hover:text-sky-800 transition-colors">
+                        Delegación uruguaya se prepara para Olimpíadas Internacionales
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-4 flex-grow">
+                        Luego de superar distintas instancias nacionales, una delegación de estudiantes se prepara para las Olimpíadas Internacionales de Matemática.
+                      </p>
+                      <span className="text-sky-600 group-hover:text-sky-800 font-medium text-sm inline-flex items-center transition-colors mt-auto">
+                        Leer artículo completo →
+                      </span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-semibold text-lg mb-3 text-sky-700">
-                      Delegación uruguaya se prepara para Olimpíadas Internacionales
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">
-                      Luego de superar distintas instancias nacionales, una delegación de estudiantes se prepara para las Olimpíadas Internacionales de Matemática.
-                    </p>
-                    <Link 
-                      href="https://ladiaria.com.uy/usuarios/entrar/?article=122406"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sky-600 hover:text-sky-800 font-medium text-sm inline-flex items-center"
-                    >
-                      Leer artículo completo →
-                    </Link>
-                  </div>
-                </div>
+                </Link>
 
                 {/* Montevideo Portal */}
-                <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="h-32 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                    <div className="text-white text-center">
-                      <div className="text-lg font-bold">Montevideo Portal</div>
-                      <div className="text-sm opacity-90">Noticias</div>
+                <Link 
+                  href="https://www.montevideo.com.uy/Noticias/Estudiantes-uruguayos-participaron-de-Olimpiada-de-Matematica-y-ANEP-resalto-su-puntaje-uc895014"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group h-full"
+                >
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-200 group-hover:scale-[1.02] cursor-pointer h-full flex flex-col">
+                    <div className="h-32 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center flex-shrink-0">
+                      <div className="text-white text-center">
+                        <div className="text-lg font-bold">Montevideo Portal</div>
+                        <div className="text-sm opacity-90">Noticias</div>
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="font-semibold text-lg mb-3 text-sky-700 group-hover:text-sky-800 transition-colors">
+                        ANEP resaltó el puntaje de estudiantes uruguayos
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-4 flex-grow">
+                        Seis liceales destacaron "en un contexto de altísima exigencia y competencia global", afirmó el organismo tras la participación en la Olimpíada de Matemática.
+                      </p>
+                      <span className="text-sky-600 group-hover:text-sky-800 font-medium text-sm inline-flex items-center transition-colors mt-auto">
+                        Leer artículo completo →
+                      </span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-semibold text-lg mb-3 text-sky-700">
-                      ANEP resaltó el puntaje de estudiantes uruguayos
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">
-                      Seis liceales destacaron "en un contexto de altísima exigencia y competencia global", afirmó el organismo tras la participación en la Olimpíada de Matemática.
-                    </p>
-                    <Link 
-                      href="https://www.montevideo.com.uy/Noticias/Estudiantes-uruguayos-participaron-de-Olimpiada-de-Matematica-y-ANEP-resalto-su-puntaje-uc895014"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sky-600 hover:text-sky-800 font-medium text-sm inline-flex items-center"
-                    >
-                      Leer artículo completo →
-                    </Link>
-                  </div>
-                </div>
+                </Link>
 
                 {/* Telenoche */}
-                <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="h-32 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
-                    <div className="text-white text-center">
-                      <div className="text-lg font-bold">Telenoche</div>
-                      <div className="text-sm opacity-90">Canal 4</div>
+                <Link 
+                  href="https://www.telenoche.com.uy/nacionales/uruguayos-reconocidos-olimpiada-internacional-matematica-n5370859"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group h-full"
+                >
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-200 group-hover:scale-[1.02] cursor-pointer h-full flex flex-col">
+                    <div className="h-32 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center flex-shrink-0">
+                      <div className="text-white text-center">
+                        <div className="text-lg font-bold">Telenoche</div>
+                        <div className="text-sm opacity-90">Canal 4</div>
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="font-semibold text-lg mb-3 text-sky-700 group-hover:text-sky-800 transition-colors">
+                        Uruguayos reconocidos en Olimpíada Internacional
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-4 flex-grow">
+                        La competencia fue en Reino Unido y tres estudiantes tuvieron una mención de honor, logrando el mejor puntaje para Uruguay desde 1987.
+                      </p>
+                      <span className="text-sky-600 group-hover:text-sky-800 font-medium text-sm inline-flex items-center transition-colors mt-auto">
+                        Leer artículo completo →
+                      </span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-semibold text-lg mb-3 text-sky-700">
-                      Uruguayos reconocidos en Olimpíada Internacional
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">
-                      La competencia fue en Reino Unido y tres estudiantes tuvieron una mención de honor, logrando el mejor puntaje para Uruguay desde 1987.
-                    </p>
-                    <Link 
-                      href="https://www.telenoche.com.uy/nacionales/uruguayos-reconocidos-olimpiada-internacional-matematica-n5370859"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sky-600 hover:text-sky-800 font-medium text-sm inline-flex items-center"
-                    >
-                      Leer artículo completo →
-                    </Link>
-                  </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
         {/* Next Competitions */}
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-inter font-semibold text-center mb-8">
-              ¡Prepárate! Próximas Competencias
-            </h2>
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-sky-600 text-white">
-                      <tr>
-                        <th className="py-3 px-4 text-left font-medium">Fecha</th>
-                        <th className="py-3 px-4 text-left font-medium">Evento</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200">
-                      <tr className="hover:bg-sky-50">
-                        <td className="py-3 px-4 font-medium">Julio 10 al 20</td>
-                        <td className="py-3 px-4">66th International Mathematical Olympiad (Sunshine Coast, Australia)</td>
-                      </tr>
-                      <tr className="hover:bg-sky-50">
-                        <td className="py-3 px-4 font-medium">Julio 27</td>
-                        <td className="py-3 px-4">Fecha límite Primera Instancia Olimpíada Nacional</td>
-                      </tr>
-                      <tr className="hover:bg-sky-50">
-                        <td className="py-3 px-4 font-medium">Agosto 17</td>
-                        <td className="py-3 px-4">Fecha límite Segunda Instancia Olimpíada Nacional</td>
-                      </tr>
-                      <tr className="hover:bg-sky-50">
-                        <td className="py-3 px-4 font-medium">Agosto (fecha y sede a confirmar)</td>
-                        <td className="py-3 px-4">5a Olimpíada PAGMO</td>
-                      </tr>
-                      <tr className="hover:bg-sky-50">
-                        <td className="py-3 px-4 font-medium">Setiembre 07</td>
-                        <td className="py-3 px-4">Fecha límite Tercera Instancia Olimpíada Nacional (Semifinal)</td>
-                      </tr>
-                      <tr className="hover:bg-sky-50">
-                        <td className="py-3 px-4 font-medium">Setiembre 22 al 29</td>
-                        <td className="py-3 px-4">40a Olimpíada Iberoamericana de Matemática (Temuco, Chile)</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div className="text-center py-4">
-                  <Link href="/calendario-2025" className="text-sky-600 hover:text-sky-800 font-medium">
-                    Ver calendario completo →
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CompetitionsTable
+          competitions={nextSixCompetitions}
+          title="¡Prepárate! Próximas Competencias"
+          variant="compact"
+          maxItems={6}
+          footerLink={{
+            href: "/calendario-2025",
+            text: "Ver calendario completo"
+          }}
+        />
         {/* Mascot Section */}
         <section className="py-12 bg-blue-50">
           <div className="container mx-auto px-4">

@@ -13,7 +13,7 @@ export default function IMOTeamPage() {
       name: "Diego Correa",
       image: "/images/Personas/Diego_Correa_Foto.jpg",
       school: "San Pablo",
-      achievements: ["Medalla de Plata en Olimpíada Rioplatense 2024", "Medalla de Bronce en Olimpíada del Conosur 2024"],
+      achievements: ["Mencíon Honorífica en Olimpíada Rioplatense 2024", "Medalla de Bronce en Olimpíada del Conosur 2024"],
       bio: "Diego ha participado en olimpiadas matemáticas desde 2022. Su enfoque principal es el álgebra y la combinatoria."
     },
     {
@@ -21,23 +21,23 @@ export default function IMOTeamPage() {
       name: "Juan Martín González",
       image: "/images/Personas/Juan_Martín_González_Foto.jpg",
       school: "Liceo N° 1, Carmelo",
-      achievements: ["Medalla de Oro en Olimpíada Nacional 2024", "Mención Honorífica en Olimpíada Iberoamericana 2024"],
-      bio: "Juan Martín descubrió su pasión por las matemáticas a los 10 años. Es su primera participación en la IMO."
+      achievements: [ "Mención Honorífica en Olimpíada Iberoamericana 2024", "Multiples participaciones en olimpaida Conosur y Rio"],
+      bio: "Juan Martín contagia al grupo con su alegría y buen humor. Es su primera participación en la IMO."
     },
     {
       id: "URU3",
       name: "Federico Méndez",
       image: "/images/Personas/Federico_Méndez_Foto.jpg",
       school: "José P. Varela",
-      achievements: ["Medalla de Plata en Olimpíada Nacional 2024", "Medalla de Oro en OLIMPRI 2023"],
-      bio: "Federico es uno de los más experimentados del equipo, habiendo participado en la IMO 2024 donde obtuvo Mención Honorífica."
+      achievements: ["Mención Honorífica en Olimpíada Iberoamericana 2024 ", "Mención Honorífica en Olimpíada Rioplatense 2024"],
+      bio: "Federico ha cosechado grandes logros en otras olimpiadas, se ha propuesto hacer lo mismo con matemática"
     },
     {
       id: "URU4",
       name: "Alfonso Ramos",
       image: "/images/Personas/Alfonso_Ramos_Foto.jpg",
       school: "PRE/U",
-      achievements: ["Medalla de Oro en Olimpíada Nacional 2024", "Medalla de Bronce en Olimpíada Iberoamericana 2024"],
+      achievements: ["Medalla de Plata en Olimpíada Nacional 2024", "Mención Honorífica en Olimpíada Iberoamericana 2024"],
       bio: "Alfonso se destaca por su capacidad para resolver problemas geométricos y su habilidad para enseñar a otros."
     },
     {
@@ -45,8 +45,8 @@ export default function IMOTeamPage() {
       name: "Rafael Trápani",
       image: "/images/Personas/Rafael_Trapani_Foto.jpg",
       school: "Escuela Superior de Informática Buceo - UTU",
-      achievements: ["Medalla de Plata en Olimpíada Nacional 2024", "Medalla de Plata en Olimpíada Rioplatense 2024"],
-      bio: "Rafael combina su pasión por la programación con su talento matemático. Es su primera participación en la IMO."
+      achievements: ["Medalla de Bronce en Olimpíada Iberoamericana 2024", "Medalla de Bronce en Olimpíada del Conosur 2023", "Partipación en Olimpíada Internacionál de Matemática 2024"],
+      bio: "Rafael es el mas experimentado del grupo al ser esta su segunda IMO"
     }
   ];
 
@@ -70,10 +70,15 @@ export default function IMOTeamPage() {
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row items-center">
                     <div className="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                      <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center border-4 border-yellow-500">
-                        <span className="text-yellow-600 text-5xl font-bold">IMO</span>
+                      {/* Opción 1: Contenedor rectangular para imagen más ancha */}
+                      <div className="w-40 h-24 rounded-xl overflow-hidden border-4 border-yellow-500 bg-white flex items-center justify-center p-2">
+                        <img 
+                          src="/images/logo_IMO_2025.png" 
+                          alt="IMO Logo" 
+                          className="max-w-full max-h-full object-contain"
+                        />
                       </div>
-                    </div>
+                  </div>
                     <div className="md:w-3/4 md:pl-6">
                       <h2 className="text-xl font-bold text-yellow-800 mb-2">
                         66th International Mathematical Olympiad
@@ -176,14 +181,17 @@ export default function IMOTeamPage() {
                 <Card className="shadow-md">
                   <CardContent className="p-6">
                     <div className="flex flex-col items-center">
-                      <div className="w-20 h-20 bg-gray-200 rounded-full mb-4 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
+                      {/* Opción 1: Foto circular con borde */}
+                      <div className="w-40 h-40 rounded-full mb-4 overflow-hidden border-2 border-gray-300">
+                        <img 
+                          src="/images/Personas/Valdimir_Silva_Foto.jpeg" 
+                          alt="Vladimir Silva" 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <h3 className="text-lg font-bold">Prof. Roberto Rodriguez</h3>
+                      <h3 className="text-lg font-bold">Vladimir Silva</h3>
                       <p className="text-gray-600 text-sm mb-3">Líder de Delegación</p>
-                      <p className="text-center text-sm">Profesor de Matemática con más de 20 años de experiencia en olimpiadas. Ha liderado equipos uruguayos en 15 IMOs anteriores.</p>
+                      <p className="text-center text-sm">Ingeniero informático y ex olímpico. Con numerosas experiencias representando a Uruguay en el exterior.</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -191,14 +199,16 @@ export default function IMOTeamPage() {
                 <Card className="shadow-md">
                   <CardContent className="p-6">
                     <div className="flex flex-col items-center">
-                      <div className="w-20 h-20 bg-gray-200 rounded-full mb-4 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
+                      <div className="w-40 h-40 rounded-full mb-4 overflow-hidden border-2 border-gray-300">
+                        <img 
+                          src="/images/Personas/FAcundo_Méndez_Foto.jpg" 
+                          alt="Facundo Méndez" 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <h3 className="text-lg font-bold">Dra. Ana Fernández</h3>
+                      <h3 className="text-lg font-bold">Facundo Méndez</h3>
                       <p className="text-gray-600 text-sm mb-3">Deputy Leader</p>
-                      <p className="text-center text-sm">Ex-olímpica y doctora en Matemáticas. Medalla de Bronce en IMO 2007. Actualmente profesora universitaria y entrenadora del equipo nacional.</p>
+                      <p className="text-center text-sm">Ex olimpico y estudiante de matemáticas.</p>
                     </div>
                   </CardContent>
                 </Card>

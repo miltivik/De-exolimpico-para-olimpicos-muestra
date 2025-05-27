@@ -11,25 +11,25 @@ const teamMembers = [
     id: "URU 1",
     name: "Correa, Facundo",
     school: "Liceo San Ignacio",
-    image: "/images/default-profile.jpg"
+    image: "/images/Personas/Facundo_Correa_Foto.jpg"
   },
   {
     id: "URU 2",
     name: "Fischbein, Luca",
     school: "Uruguayan American School",
-    image: "/images/default-profile.jpg"
+    image: "/images/Personas/Luca_Fischbein_Foto.jpg"
   },
   {
     id: "URU 3",
     name: "Murguía, Julia",
     school: "Uruguayan American School",
-    image: "/images/default-profile.jpg"
+    image: "/images/Personas/Julia_Murguía_Foto.jpg"
   },
   {
     id: "URU 4",
     name: "Rivarola, Lautaro",
     school: "San Miguel, Mercedes, Soriano",
-    image: "/images/default-profile.jpg"
+    image: "/images/Personas/Lautaro_Raviola_Foto.jpg"
   }
 ];
 
