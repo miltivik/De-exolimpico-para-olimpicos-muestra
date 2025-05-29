@@ -107,7 +107,7 @@ export default function ResultadosPage() {
           date: "Setiembre, 2023",
           team: [
             { name: "Florencia Sapriza", award: "Medalla de Bronce", image: "/images/Personas/Florencia_Sapriza_Foto.jpg" },
-            { name: "Renato De Paula", award: null, image: "/images/Personas/Renato_De_Paula_Foto.jpg" },
+            { name: "Renato De Paula", award: null, image: "/images/Personas/Renato_De_Paula_Foto.jpeg" },
             { name: "Mateo Domenech", award: null, image: "/images/Personas/Mateo_Domenech_Foto.jpg" },
             { name: "Agustín Miraballes", award: null, image: "/images/Personas/Agustín_Miraballes_Foto.jpg" }
           ],
@@ -118,10 +118,11 @@ export default function ResultadosPage() {
           location: "Buenos Aires, Argentina",
           date: "Agosto, 2023",
           team: [
-            { name: "Renato De Paula", award: "", image: "/images/Personas/Renato_De_Paula_Foto.jpg" },
-            { name: "Juan González", award: "", image: "/images/Personas/Juan_González_Foto.jpg" },
-            { name: "Francisco Rodríguez", award: "", image: "/images/Personas/Francisco_Rodríguez_Foto.jpg" },
-            { name: "Rafael Trápani", award: "", image: "/images/Personas/Rafael_Trapani_Foto.jpg" }
+            { name: "Rafael Trápani", award: "Medalla de Bronce", image: "/images/Personas/Rafael_Trapani_Foto.jpg" },
+            { name: "Renato De Paula", award: "", image: "/images/Personas/Renato_De_Paula_Foto.jpeg" },
+            { name: "Juan Martín González", award: "", image: "/images/Personas/Juan_Martín_González_Foto.jpg" },
+            { name: "Francisco Rodríguez", award: "", image: "/images/Personas/Francisco_Rodríguez_Foto.jpeg" },
+            
           ],
           leaders: ["Prof. Nelson Chocca", "Vladimir Silva"]
         },
@@ -132,8 +133,8 @@ export default function ResultadosPage() {
           team: [
             { name: "Florencia Broggi", award: "", image: "/images/Personas/Florencia_Broggi_Foto.jpg" },
             { name: "María Capone", award: "", image: "/images/Personas/María_Capone_Foto.jpg" },
-            { name: "Alina Dávila", award: "", image: "/images/Personas/Alina_Dávila_Foto.jpg" },
-            { name: "Anette Kunin", award: "", image: "/images/Personas/Anette_Kunin_Foto.jpg" }
+            { name: "Alina Dávila", award: "", image: "/images/Personas/Alina_Dávila_Foto.png" },
+            { name: "Anette Kunin", award: "", image: "/images/Personas/Anette_Kunin_Foto.png" }
           ],
           leaders: []
         },
