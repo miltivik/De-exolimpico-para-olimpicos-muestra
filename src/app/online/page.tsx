@@ -91,7 +91,7 @@ export default function OnlinePage() {
               <CardContent className="p-0">
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
-                    src="https://www.youtube.com/embed/QtQdZB0MBjA?embed_config=%7B%22enc%22:%22AXH1ezmSdVasFY_0h7ycQWsTDje6AKJ_wu0Kzi8tiv3J5X3YDjahCZrAegTdVJjHHGM4-czCmg1H-RwglLtt9CXzJeuARUMbqLklMIfIiZOCdVYmzDqA9ZhJiTFb2yiih-yGERJPCS95dPWeZg-WBG4Xvb5cxuxRUXK2sefgcN8ij2s5%22%7D&errorlinks=1&rct=CpcBAXH1eznQJyvLzSG07Exvud573hvCelAUjziJ0wfQFr1kmPRGJb88SGFtE7dHIi5R3YwcLpFw5VTZBJgxNezriJ2_NIuZnlVh8GBpTRwP7rLgNINkxOQNChE8H5YuVZbEpI5iPD4uOLoZxkTXaDETXckhJjE89sCoi7NTtRbDmEg6mldr1AiktUxclzfbTpT8eKkJiKjJOQ%3D%3D"
+                    src="https://www.youtube.com/embed/QtQdZB0MBjA"
                     title="Participación Online en Olimpíada Conosur"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

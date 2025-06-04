@@ -5,13 +5,13 @@ import Image from 'next/image';
 import ClientPDFSection from './ClientPDFSection';
 
 const niveles = [
-  { key: 'IA', title: 'Nivel IA', pdf: 'https://drive.google.com/file/d/ID_IA_2/view?usp=sharing', video: 'https://www.youtube.com/embed/VIDEO_ID_IA_2', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
-  { key: 'IB', title: 'Nivel IB', pdf: 'https://drive.google.com/file/d/ID_IB_2/view?usp=sharing', video: 'https://www.youtube.com/embed/VIDEO_ID_IB_2', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
-  { key: 'IC', title: 'Nivel IC', pdf: 'https://drive.google.com/file/d/ID_IC_2/view?usp=sharing', video: 'https://www.youtube.com/embed/VIDEO_ID_IC_2', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
-  { key: 'II', title: 'Nivel II', pdf: 'https://drive.google.com/file/d/ID_II_2/view?usp=sharing', video: 'https://www.youtube.com/embed/VIDEO_ID_II_2', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
-  { key: 'III', title: 'Nivel III', pdf: 'https://drive.google.com/file/d/ID_III_2/view?usp=sharing', video: 'https://www.youtube.com/embed/VIDEO_ID_III_2', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
-  { key: 'IV', title: 'Nivel IV', pdf: 'https://drive.google.com/file/d/ID_IV_2/view?usp=sharing', video: 'https://www.youtube.com/embed/VIDEO_ID_IV_2', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
-  { key: 'V', title: 'Nivel V', pdf: 'https://drive.google.com/file/d/ID_V_2/view?usp=sharing', video: 'https://www.youtube.com/embed/VIDEO_ID_V_2', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
+  { key: 'IA', title: 'Nivel IA', pdf: 'https://drive.google.com/file/d/1pbL_tfzhYc_26GNVwCbjig82mC1QNUzE/view?usp=sharing', video: 'https://www.youtube.com/embed/HEGiZeOU6RM', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
+  { key: 'IB', title: 'Nivel IB', pdf: 'https://drive.google.com/file/d/1qOaUKYJI6Bqxa_VGz7PcYu1EBUdDH-z5/view?usp=sharing', video: 'https://www.youtube.com/embed/DX-gEB-De7s', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
+  { key: 'IC', title: 'Nivel IC', pdf: 'https://drive.google.com/file/d/1gM4c6IJfaU91Ik0aGroTZ9sxGieqIMab/view?usp=sharing', video: 'https://www.youtube.com/embed/9SyPsrpYJPI', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
+  { key: 'II', title: 'Nivel II', pdf: 'https://drive.google.com/file/d/17--pQqwcK6Woe-K53e0bd3i3Z7TyNGgG/view?usp=sharing', video: 'https://www.youtube.com/embed/fLkQnpoHQiw', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
+  { key: 'III', title: 'Nivel III', pdf: 'https://drive.google.com/file/d/1NtxRoA3dwVlGtP8GSn4PQPDncWcQhAST/view?usp=sharing', video: 'https://www.youtube.com/embed/8ws2xuK3B2I', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
+  { key: 'IV', title: 'Nivel IV', pdf: 'https://drive.google.com/file/d/1avnfLWOb_ZLZT4Jk6Je8acrOblc-1b11/view?usp=sharing', video: 'https://www.youtube.com/embed/-xj4lJ6nlFQ', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
+  { key: 'V', title: 'Nivel V', pdf: 'https://drive.google.com/file/d/17HwJIN3VkdJhdigTH_JK71zqjMxpXAMc/view?usp=sharing', video: 'https://www.youtube.com/embed/xXTTMKgKJZk', img: 'https://ext.same-assets.com/1728315765/512160776.png' },
 ];
 
 export default function SegundaInstanciaPage() {

@@ -35,7 +35,7 @@ export default function Page2020() {
             <div className="max-w-7xl mx-auto">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <iframe 
-                  src="https://www.youtube.com/embed/LCe8kFif4LQ?embed_config=%7B%22enc%22:%22AXH1ezkFuNQnG4IfnWB3eXPB0Ogw4zzna0sBZx1Pw0DscBlUOZSEnxLd2M9fo3N44ASWDzTeppEnkfarHLaYueJCBqCJG1X3Z0KS2_x6zbXhR5XTFrONP9GyJ7_lBzZOzsJNQdrTAIVko_5CVOvfEWEh6mDZUueLLydwkWjgw4RYN2--%22%7D&errorlinks=1&rct=CpgBAXH1eznVxIYODeHa9beVD9lM8RrebiAK5QQn6LTaEIvEYAroK2vAdPm1_o3gwlQyb8CI9DGxjeZ1smX9uFQJDAKtg1zshrnsD1aOzMD_YBm0_MUZ_v4q-Zp0QEBjs9SZolb-c63BB4OVspy4OZ2AzzAng5-sU8qidqT8reIZWJAc5dXFCRlppzRHB5Gv3VuUiUrYV3r4o2s%3D"
+                  src="https://www.youtube.com/embed/LCe8kFif4LQ"
                   title="Olimpiada 2020 video"
                   className="w-full h-[650px]" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

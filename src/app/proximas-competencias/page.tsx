@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Card, CardContent } from '@/components/ui/card';
+import CompetitionsTable from '@/components/competitions/CompetitionsTable';
+import { upcomingCompetitions, featuredCompetition } from '@/data/competitions';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -64,67 +65,6 @@ function CountdownDays({ targetDate }: { targetDate: Date }) {
 }
 
 export default function ProximasCompetenciasPage() {
-  // Only upcoming events (starting from May 25, 2025)
-  const upcomingEvents = [
-    { 
-      date: "Junio 4 al 9", 
-      event: "36a Olimpíada Matemática de Países del Conosur (Minas, Uruguay)", 
-      highlight: true, 
-      daysLeft: 10
-    },
-    { 
-      date: "Julio 10 al 20", 
-      event: "66th International Mathematical Olympiad (Sunshine Coast, Australia)", 
-      highlight: false, 
-      daysLeft: 46
-    },
-    { 
-      date: "Julio 27", 
-      event: "Fecha límite Primera Instancia Olimpíada Nacional", 
-      daysLeft: 63
-    },
-    { 
-      date: "Agosto 17", 
-      event: "Fecha límite Segunda Instancia Olimpíada Nacional", 
-      daysLeft: 84
-    },
-    { 
-      date: "Agosto", 
-      event: "5a Olimpíada PAGMO (fecha y sede a confirmar)", 
-      daysLeft: null 
-    },
-    { 
-      date: "Setiembre 7", 
-      event: "Fecha límite Tercera Instancia Olimpíada Nacional (Semifinal)", 
-      daysLeft: 105
-    },
-    { 
-      date: "Setiembre 22 al 29", 
-      event: "40a Olimpíada Iberoamericana de Matemática (Temuco, Chile)", 
-      daysLeft: 120
-    },
-    { 
-      date: "Octubre", 
-      event: "Cuarta Instancia Olimpíada Nacional Secundaria (Final) (fecha a confirmar)", 
-      daysLeft: null 
-    },
-    { 
-      date: "Noviembre", 
-      event: "Cuarta Instancia Olimpíada Nacional Primaria (Final) (fecha a confirmar)", 
-      daysLeft: null 
-    },
-    { 
-      date: "Diciembre", 
-      event: "32a Olimpíada Rioplatense de Matemática (Buenos Aires, Argentina) (fecha a confirmar)", 
-      daysLeft: null 
-    },
-    { 
-      date: "Diciembre", 
-      event: "5a Olimpíada OLIMPRI (fecha a confirmar)", 
-      daysLeft: null 
-    }
-  ];
-
   // Fecha de inicio del Conosur 2025
   const conosurStartDate = new Date('2025-06-04T00:00:00');
 
@@ -237,76 +177,18 @@ export default function ProximasCompetenciasPage() {
               </div>
             </div>
             
-            {/* Events Table/Cards */}
-            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
-              <div className="border-b border-gray-100 bg-sky-50 px-6 py-4">
-                <h2 className="text-xl font-bold text-gray-800">Todas las próximas competencias</h2>
-              </div>
-              
-              <div className="divide-y divide-gray-100">
-                {upcomingEvents.map((event, index) => {
-                  // Calcular la fecha objetivo si es posible
-                  let targetDate: Date | null = null;
-                  if (event.event.includes('Conosur')) {
-                    targetDate = new Date('2025-06-04T00:00:00');
-                  } else if (event.event.includes('International Mathematical Olympiad')) {
-                    targetDate = new Date('2025-07-10T00:00:00');
-                  } else if (event.event.includes('Primera Instancia')) {
-                    targetDate = new Date('2025-07-27T00:00:00');
-                  } else if (event.event.includes('Segunda Instancia')) {
-                    targetDate = new Date('2025-08-17T00:00:00');
-                  } else if (event.event.includes('Tercera Instancia')) {
-                    targetDate = new Date('2025-09-07T00:00:00');
-                  } else if (event.event.includes('Iberoamericana')) {
-                    targetDate = new Date('2025-09-22T00:00:00');
-                  }
-                  return (
-                    <div 
-                      key={index} 
-                      className={`flex flex-col md:flex-row p-6 ${event.highlight ? 'bg-yellow-50' : 'hover:bg-gray-50'} transition-colors`}
-                    >
-                      <div className="md:w-1/3 mb-3 md:mb-0">
-                        <div className="flex items-start">
-                          <div className="bg-sky-100 rounded-full p-2 flex-shrink-0 mr-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                          </div>
-                          <div>
-                            <span className="font-medium text-gray-900">{event.date}</span>
-                            {targetDate ? (
-                              <CountdownDays targetDate={targetDate} />
-                            ) : (
-                              event.daysLeft && (
-                                <span className="block text-sm text-yellow-600 mt-1">
-                                  Faltan {event.daysLeft} días
-                                </span>
-                              )
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="md:w-2/3 md:pl-4">
-                        <p className={`text-gray-800 ${event.highlight ? 'font-semibold' : ''}`}>{event.event}</p>
-                        {event.highlight && (
-                          <Link 
-                            href="/equipo-conosur-2025" 
-                            className="inline-flex items-center text-sky-600 hover:text-sky-800 font-medium text-sm mt-2 group"
-                          >
-                            <span className="border-b border-transparent group-hover:border-sky-800 transition-colors">
-                              Ver detalles
-                            </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Link>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+            {/* Events Table */}
+            <div>
+              <h2 className="text-xl font-bold text-gray-800 mb-6">Todas las próximas competencias</h2>
+              <CompetitionsTable
+                competitions={upcomingCompetitions}
+                variant="full"
+                showCountdown={true}
+                footerLink={{
+                  href: "/calendario-2025",
+                  text: "Ver calendario completo"
+                }}
+              />
             </div>
 
             <div className="mt-10 text-center">
