@@ -147,7 +147,7 @@ export default function Home() {
                   className="group h-full"
                 >
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-200 group-hover:scale-[1.02] cursor-pointer h-full flex flex-col">
-                    <div className="h-32 bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center flex-shrink-0">
+                    <div className="h-32 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center flex-shrink-0">
                       <div className="text-white text-center">
                         <div className="text-lg font-bold">La Diaria</div>
                         <div className="text-sm opacity-90">Periódico</div>
@@ -175,7 +175,7 @@ export default function Home() {
                   className="group h-full"
                 >
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-200 group-hover:scale-[1.02] cursor-pointer h-full flex flex-col">
-                    <div className="h-32 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center flex-shrink-0">
+                    <div className="h-32 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center flex-shrink-0">
                       <div className="text-white text-center">
                         <div className="text-lg font-bold">Montevideo Portal</div>
                         <div className="text-sm opacity-90">Noticias</div>
@@ -203,7 +203,7 @@ export default function Home() {
                   className="group h-full"
                 >
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-200 group-hover:scale-[1.02] cursor-pointer h-full flex flex-col">
-                    <div className="h-32 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center flex-shrink-0">
+                    <div className="h-32 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center flex-shrink-0">
                       <div className="text-white text-center">
                         <div className="text-lg font-bold">Telenoche</div>
                         <div className="text-sm opacity-90">Canal 4</div>
