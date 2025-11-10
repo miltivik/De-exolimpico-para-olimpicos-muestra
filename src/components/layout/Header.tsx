@@ -1,4 +1,4 @@
-"use client"  
+"use client"
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -80,9 +80,6 @@ export default function Header() {
               { title: "Sobre Nosotros", href: "/sobre-nosotros" },
               { title: "Mascota", href: "/mascota" }
             ]} />
-            <Link href="/online" className="font-inter text-base font-medium hover:text-sky-600">
-              Participar Online
-            </Link>
             <NavDropdown label="Calendario 2025" items={calendarioItems} />
             <NavDropdown label="Equipos" items={equiposItems} />
             <NavDropdown label="Materiales" items={materialesItems} />

@@ -72,10 +72,10 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a 
-                    href="https://com-partidauruguay.weebly.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://com-partidauruguay.weebly.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-600 hover:text-sky-700 transition-colors flex items-center"
                   >
                     Sitio Oficial
@@ -126,11 +126,6 @@ export default function Footer() {
               <h4 className="font-inter font-semibold text-gray-800 mb-4 text-md">Materiales</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/online" className="text-gray-600 hover:text-sky-700 transition-colors">
-                    Participación Online
-                  </Link>
-                </li>
-                <li>
                   <Link href="/nacional" className="text-gray-600 hover:text-sky-700 transition-colors">
                     Olimpiadas Nacionales
                   </Link>
@@ -141,10 +136,10 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a 
-                    href="https://drive.google.com/drive/u/1/folders/18PJVLK11IXBHp_1ddrH8T5itxmDZpSOj" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://drive.google.com/drive/u/1/folders/18PJVLK11IXBHp_1ddrH8T5itxmDZpSOj"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-600 hover:text-sky-700 transition-colors flex items-center"
                   >
                     Material de Estudio

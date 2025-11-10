@@ -8,6 +8,33 @@ import Image from 'next/image';
 export default function ResultadosPage() {
   // Sample results data for past competitions
   const resultados = [
+  {
+    year: 2025,
+    competitions: [
+      {
+        name: "66ª Olimpíada Internacional de Matemática (IMO)",
+        location: "Melbourne, Australia",
+        date: "Julio 2025",
+        team: [
+          { name: "Juan González", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
+          { name: "Diego Correa", award: "Mención Honorífica", image: "/images/placeholder-profile.png" }
+        ],
+        leaders: []
+      },
+      {
+        name: "40ª Olimpíada Iberoamericana de Matemática",
+        location: "TBD",
+        date: "Septiembre 2025",
+        team: [
+          { name: "Participante 1", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
+          { name: "Participante 2", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
+          { name: "Participante 3", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" },
+          { name: "Participante 4", award: "Medalla de Bronce", image: "/images/placeholder-profile.png" }
+        ],
+        leaders: []
+      }
+    ]
+  },
     {
       year: 2024,
       competitions: [
@@ -61,6 +88,8 @@ export default function ResultadosPage() {
             { name: "Agustín Miraballes", award: null, image: "/images/Personas/Agustín_Miraballes_Foto.jpg" },
             { name: "Francisco González", award: null, image: "/images/Personas/Francisco_Gonzalez_Foto.jpeg" },
             { name: "Rafael Trapani", award: null, image: "/images/Personas/Rafael_Trapani_Foto.jpg" },
+            { name: "Juan González", award: "Mención Honorífica", image: "/images/placeholder-profile.png" },
+            { name: "Diego Correa", award: "Mención Honorífica", image: "/images/Personas/Diego_Correa_Foto.jpg" },
           ],
           leaders: ["Prof. Guillermo Stok", "Prof. Nelson Chocca"]
         },
@@ -122,7 +151,7 @@ export default function ResultadosPage() {
             { name: "Renato De Paula", award: "", image: "/images/Personas/Renato_De_Paula_Foto.jpeg" },
             { name: "Juan Martín González", award: "", image: "/images/Personas/Juan_Martín_González_Foto.jpg" },
             { name: "Francisco Rodríguez", award: "", image: "/images/Personas/Francisco_Rodríguez_Foto.jpeg" },
-            
+
           ],
           leaders: ["Prof. Nelson Chocca", "Vladimir Silva"]
         },
@@ -170,16 +199,16 @@ export default function ResultadosPage() {
             {/* Introduction */}
             <div className="bg-sky-50 p-6 rounded-lg mb-8">
               <p className="mb-4">
-                A lo largo de los años, Uruguay ha tenido una destacada participación en diversas competencias 
-                matemáticas internacionales. En esta sección, podrás conocer los resultados obtenidos por nuestros 
+                A lo largo de los años, Uruguay ha tenido una destacada participación en diversas competencias
+                matemáticas internacionales. En esta sección, podrás conocer los resultados obtenidos por nuestros
                 representantes en las olimpiadas más recientes.
               </p>
               <p>
-                Cada medalla y mención honorífica representa el esfuerzo, dedicación y talento de nuestros 
+                Cada medalla y mención honorífica representa el esfuerzo, dedicación y talento de nuestros
                 estudiantes, así como el compromiso del equipo de entrenadores y profesores que los preparan.
               </p>
             </div>
-            
+
             {/* Medal Legend */}
             <div className="mb-8 bg-white p-4 rounded-lg shadow-sm border border-gray-200">
               <h3 className="text-lg font-medium mb-3 text-gray-800">Leyenda de Premios:</h3>
@@ -231,7 +260,7 @@ export default function ResultadosPage() {
                 <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-sky-500 inline-block text-sky-800">
                   Resultados {yearData.year}
                 </h2>
-                
+
                 <div className="space-y-6">
                   {yearData.competitions.map((competition, index) => (
                     <Card key={index} className="shadow-md hover:shadow-lg transition-shadow">
@@ -241,16 +270,16 @@ export default function ResultadosPage() {
                           <span>{competition.location}</span>
                           <span>{competition.date}</span>
                         </div>
-                        
+
                         <h4 className="font-medium mt-4 mb-3">Equipo uruguayo:</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
                           {competition.team.map((member, i) => (
                             <div key={i} className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
                               <div className="flex flex-col">
                                 <div className="relative w-full h-40 bg-gray-100">
-                                  <Image 
-                                    src={member.image} 
-                                    alt={`Foto de ${member.name}`} 
+                                  <Image
+                                    src={member.image}
+                                    alt={`Foto de ${member.name}`}
                                     fill
                                     className="object-cover"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -311,7 +340,7 @@ export default function ResultadosPage() {
                             </div>
                           ))}
                         </div>
-                        
+
                         <div className="mt-4 text-sm text-gray-600 bg-gray-50 p-3 rounded-md">
                           <span className="font-medium">Líderes del equipo:</span>{" "}
                           {competition.leaders.join(", ")}
@@ -334,12 +363,12 @@ export default function ResultadosPage() {
                 <div className="text-center md:text-left">
                   <h3 className="text-xl font-bold text-yellow-700 mb-3">Historia olímpica uruguaya</h3>
                   <p className="mb-4 text-gray-700">
-                    Uruguay participa en la Olimpíada Internacional de Matemática desde 1997, y ha 
-                    obtenido hasta el momento <span className="font-medium text-amber-700">3 medallas de bronce</span> y 
+                    Uruguay participa en la Olimpíada Internacional de Matemática desde 1997, y ha
+                    obtenido hasta el momento <span className="font-medium text-amber-700">3 medallas de bronce</span> y
                     <span className="font-medium text-sky-600"> 12 menciones honoríficas</span>.
                   </p>
-                  <Link 
-                    href="/contacto" 
+                  <Link
+                    href="/contacto"
                     className="inline-flex items-center text-yellow-600 hover:text-yellow-800 font-medium transition-colors"
                   >
                     ¿Tienes información histórica que quieras compartir? Contáctanos
@@ -357,4 +386,4 @@ export default function ResultadosPage() {
       <Footer />
     </div>
   );
-} 
+}

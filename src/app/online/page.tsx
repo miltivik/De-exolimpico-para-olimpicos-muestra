@@ -76,13 +76,13 @@ export default function OnlinePage() {
             {/* Hero Section */}
             <div className="text-center mb-12">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-inter font-bold mb-4 text-sky-800">
-                ¿Cómo puedo participar de forma online?
+                Recursos para Participación Online
               </h1>
               <div className="flex justify-center">
                 <div className="h-1 w-24 bg-yellow-500 rounded mb-6"></div>
               </div>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Descubre todo lo que necesitas saber para participar en nuestras competencias matemáticas desde tu casa
+                Descubre recursos y guías para participar en nuestras competencias matemáticas desde tu casa
               </p>
             </div>
 
@@ -92,7 +92,7 @@ export default function OnlinePage() {
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
                     src="https://www.youtube.com/embed/QtQdZB0MBjA"
-                    title="Participación Online en Olimpíada Conosur"
+                    title="Recursos Online para Olimpíada Conosur"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute top-0 left-0 w-full h-full"
